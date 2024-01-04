@@ -1,0 +1,41 @@
+.flexbox{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid brown;
+    background-color: rgb(17, 0, 0);
+}
+
+.panelPrincipal{/* 
+    display: flex; */
+
+    background-color:rgb(0, 32, 32);
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 20px;
+    width: 800px;
+    height: 94vh;
+    }
+
+.panelSecundario{
+    display: flex;
+   /*  flex-direction: row; */
+
+    background-color:rgb(0, 46, 46);
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 20px; 
+    width: fit-content;
+    height: fit-content;
+    color: white;
+}
+
+.dados{
+    position: absolute;
+    z-index: 2;
+    margin-left: calc(50vw  - 300px);
+    margin-top: 100px;
+    border: 3px solid green;
+    border-radius: 20px;
+    box-shadow: 15px 15px 30px;
+}

@@ -1,0 +1,74 @@
+<div *ngIf="DatosService.lugar == 2"><article class="texto"> <div style='text-align:center'><b>¡Comienza la aventura!<br><br></b></div>
+    A mediados de noviembre te llega una carta informando que has recibido una herencia
+     de una vieja casa en mitad del bosque de un familiar lejano, no tienes ningún interés en ella,
+      pero por verla y ver si tiene posibilidad de inversión no pierdes nada. Sales de trabajar,
+       te montas en el coche y vas directo al lugar. <br><br>
+    
+    Abandonas la carretera secundaria, y te metes por un camino en el que cuanto más avanzas, en peor estado está. <br><br>Poco a poco va anocheciendo.
+
+    <br><br>
+
+<button (click)="DatosService.tirada('percepcion')"> realizar tirada de percepcion</button>
+
+</article>
+
+</div>
+
+<div *ngIf="DatosService.lugar == 10">
+<article class="texto">ves entre la maleza del sendero una roca e inmediatamente intentas esquivarla y parar</article>
+<button (click)="DatosService.tirada('velocidad')"> realizar tirada de velocidad</button>
+</div>
+
+<div *ngIf="DatosService.lugar == 11">
+<article class="texto">Notas un golpazo en la parte inferior del coche, paras el coche, y bajas a ver lo que ha sucedido
+y descubres que el golpe ha perforado el depósito de gasolina y se está derramando en la tierra. 
+En el coche no tienes nada que te sirva para taponar la fuga ni para almacenar la gasolina que cae.
+ "Mal sitio para quedarse atrapado" piensas. Ya que no hay cobertura y estás lejos de la carretera.
+Esperas poder encontrar en la casa gasolina y las herramientas necesarias para poder arreglar la fisura.
+</article>
+<button (click)="DatosService.siguiente(20)"> siguiente</button>
+</div>
+
+<div *ngIf="DatosService.lugar == 12">
+<article class="texto">por los pelos logras esquivar la roca. Detienes el coche completamente y compruebas que está en buen estado.
+ Decides que es mejor continuar a pie, la casa no debe estar lejos</article>
+<button (click)="DatosService.siguiente(20)"> siguiente</button>
+</div>
+
+<div *ngIf="DatosService.lugar == 13">
+<article class="texto">Pegas un volantazo y clavas el freno pero tu reacción ha sido demasiado lenta cuando notas un golpe en la parte inferior del coche.
+Bajas con la esperanza de que no haya sido nada pero descubres que el golpe ha perforado el depósito de gasolina y se está derramando en la tierra. 
+En el coche no tienes nada que te sirva para taponar la fuga ni para almacenar la gasolina que cae.
+ "Mal sitio para quedarse atrapado" piensas, ya que no hay cobertura y estás lejos de la carretera.
+Esperas poder encontrar en la casa gasolina y las herramientas necesarias para poder arreglar la fisura.
+</article>
+<button (click)="DatosService.siguiente(20)"> siguiente</button>
+</div>
+
+<div *ngIf="DatosService.lugar == 20">
+<article class="texto">  Mientras caminas, sientes miedo, sabes que en esta zona no hay ningún animal peligroso ni nadie cerca,
+    pero ese pequeño miedo irracional al estar en mitad de la nada de noche no te lo puedes quitar de la cabeza,
+    así que agarras un palo del suelo, siempre transmite seguridad...
+    Avanzas unos metros y ves que en mitad del sendero hay el tronco de un arbol caido.
+</article>
+<button (click)="DatosService.tirada('fuerza')"> tratar de apartarlo del camino (fuerza)</button>
+<button (click)="DatosService.siguiente(30)"> pasar por encima</button>
+</div>
+
+<div *ngIf="DatosService.lugar == 21">
+    <article class="texto">Consigues echar a un lado el tronco. "Así no tendré que bajarme del coche para quitarlo la próxima vez"
+    </article>
+    <button (click)="DatosService.siguiente(30)"> siguiente</button>
+    </div>
+<div *ngIf="DatosService.lugar == 22">
+    <article class="texto">El tronco es demasiado pesado, decides dejarlo donde está y continúas 
+    </article>
+    <button (click)="DatosService.siguiente(30)"> siguiente</button>
+    </div>
+
+
+<div *ngIf="DatosService.lugar == 30">
+    <article class="texto"> Hasta aquí por hoy. Mañana más
+    </article>
+    <button (click)="DatosService.siguiente(20)"> siguiente</button>
+    </div>

@@ -1,0 +1,27 @@
+.ventana{
+    z-index: 5;
+    height: 500px;
+    width: 500px;
+    border-radius: 2px solid red;
+    background-color: blue;
+    text-align: center;
+    margin-block-start: 0px;
+    border-radius: 20px;
+}
+
+.tirada{
+    border-radius: 20px;
+}
+
+.botones{
+    position: absolute;
+    z-index: 3;
+    height: 50px;
+    width: 150px;
+    margin-top: 430px;
+    margin-left: 300px;
+    font-size: 30px;
+    color: white;
+    background-color: black;
+    box-shadow: 20px 20px 20px black;
+}
