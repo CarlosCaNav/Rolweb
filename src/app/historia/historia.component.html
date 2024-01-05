@@ -23,7 +23,7 @@
 <article class="texto">Notas un golpazo en la parte inferior del coche, paras el coche, y bajas a ver lo que ha sucedido
 y descubres que el golpe ha perforado el depósito de gasolina y se está derramando en la tierra. 
 En el coche no tienes nada que te sirva para taponar la fuga ni para almacenar la gasolina que cae.
- "Mal sitio para quedarse atrapado" piensas. Ya que no hay cobertura y estás lejos de la carretera.
+ "Mal sitio para quedarse atrapado" piensas, ya que no hay cobertura y estás lejos de la carretera.
 Esperas poder encontrar en la casa gasolina y las herramientas necesarias para poder arreglar la fisura.
 </article>
 <button (click)="DatosService.siguiente(20)"> siguiente</button>
@@ -68,7 +68,19 @@ Esperas poder encontrar en la casa gasolina y las herramientas necesarias para p
 
 
 <div *ngIf="DatosService.lugar == 30">
-    <article class="texto"> Hasta aquí por hoy. Mañana más
+    <article class="texto"> Llegas a un claro, y ya por fin ves la casa.
+        Ya es de noche, una noche completamente despejada y silenciosa, a medida que avanzas sólo escuchas tus pasos y algún grillo a lo lejos,
+        hasta que de pronto escuchas un zumbido acercarse y le das un manotazo reflejo cuando lo notas detrás en tu cuello.
+         ¿Qué es eso? te preguntas asustad{{DatosService.sexo}} al ver retorcerse en el suelo lo que parece un mosquito más grande que tu mano. <br>
+         Empuñas con fuerza el palo y te acercas a la casa. Al llegar a la puerta oyes ruido en su interior...
     </article>
-    <button (click)="DatosService.siguiente(20)"> siguiente</button>
+    <button (click)="DatosService.siguiente(40)"> entrar</button>
+    <button (click)="DatosService.siguiente(40)"> escuchar (percepción)</button>
+    <button (click)="DatosService.siguiente(40)"> abrir la puerta de una patada</button>
+    <button (click)="DatosService.siguiente(40)"> rodear la casa y ver qué encuentras</button>
     </div>
+
+    <div *ngIf="DatosService.lugar == 40">
+        <article class="texto"> ya habrá más impaciente...
+        </article>
+        </div>
