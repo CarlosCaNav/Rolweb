@@ -8,18 +8,18 @@ export class DatosService {
   constructor() { }
 
   nombre: string = ""; /* Poner "" luego */
-  sexo: string = "a"; /* Poner j luego */
+  sexo: string = "j"; /* Poner j luego */
 
   salud: number = 100;
 
-  puntos: number = 11; /* poner luego 11  */
-  fuerza: number = 2; /* poner luego 0  */
-  velocidad: number = 2; /* poner luego 0  */
-  punteria: number = 2; /* poner luego 0  */
-  percepcion: number = 2; /* poner luego 0  */
+  puntos:     number = 11; /* poner luego 11  */
+  fuerza:      number = 0; /* poner luego 0  */
+  velocidad:   number = 0; /* poner luego 0  */
+  punteria:    number = 0; /* poner luego 0  */
+  percepcion:  number = 0; /* poner luego 0  */
 
   tiempo: number = 0;
-  lugar: number = 20; /* poner luego 0  */
+  lugar: number = 0; /* poner luego 0  */
   dados: boolean = false; /* muestra o no muestra el dado */
   resultado: number = 0; /* resultado de la tirada de los dados */
   exito: boolean = true;
@@ -78,41 +78,24 @@ export class DatosService {
     this.resultado = 0;
     this.dados = true;
     setTimeout(() => {
-      this.resultado = Math.floor(Math.random() * (6) + 1);
+      this.resultado = Math.floor(Math.random() * 6 + 1);
+
       if (habilidad == "fuerza") {
-        if (this.resultado >= 6 - this.fuerza) {
-          this.exito = true
-        }
-        else {
-          this.exito = false
-        };
+          this.exito = (this.resultado >= 6 - this.fuerza);
       }
       if (habilidad == "velocidad") {
-        if (this.resultado >= 6 - this.velocidad) {
-          this.exito = true
-        }
-        else {
-          this.exito = false
-        };
-      }
-      if (habilidad == "punteria") {
-        if (this.resultado >= 6 - this.punteria) {
-          this.exito = true
-        }
-        else {
-          this.exito = false
-        };
-      }
-      if (habilidad == "percepcion") {
-        if (this.resultado >= 6 - this.percepcion) {
-          this.exito = true
-        }
-        else {
-          this.exito = false
-        };
+        this.exito = this.resultado >= 6 - this.velocidad;
       }
 
-      this.resultado = this.resultado;
+      if (habilidad == "punteria") {
+        this.exito = this.resultado >= 6 - this.punteria;
+      }
+
+      if (habilidad == "percepcion") {
+        this.exito = this.resultado >= 6 - this.percepcion
+      }
+/* 
+      this.resultado = this.resultado; */
 
       console.log(this.resultado);
       console.log(this.exito);
