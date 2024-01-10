@@ -4,17 +4,17 @@
 <div class = ventana>
     <img class="tirada" *ngIf="DatosService.resultado == 0" width="500px" src="assets/dados/0.jpeg">
 
-    <img class="tirada" *ngIf="DatosService.resultado == 2 && DatosService.exito == true" width="500px" src="assets/dados/2b.png">
-    <img class="tirada" *ngIf="DatosService.resultado == 3 && DatosService.exito == true" width="500px" src="assets/dados/3b.png">
-    <img class="tirada" *ngIf="DatosService.resultado == 4 && DatosService.exito == true" width="500px" src="assets/dados/4b.png">
-    <img class="tirada" *ngIf="DatosService.resultado == 5 && DatosService.exito == true" width="500px" src="assets/dados/5b.png">
-    <img class="tirada" *ngIf="DatosService.resultado == 6 && DatosService.exito == true" width="500px" src="assets/dados/6b.png">
+    <img class="tirada" *ngIf="DatosService.resultado == 2 && DatosService.exito" width="500px" src="assets/dados/2b.png">
+    <img class="tirada" *ngIf="DatosService.resultado == 3 && DatosService.exito" width="500px" src="assets/dados/3b.png">
+    <img class="tirada" *ngIf="DatosService.resultado == 4 && DatosService.exito" width="500px" src="assets/dados/4b.png">
+    <img class="tirada" *ngIf="DatosService.resultado == 5 && DatosService.exito" width="500px" src="assets/dados/5b.png">
+    <img class="tirada" *ngIf="DatosService.resultado == 6 && DatosService.exito" width="500px" src="assets/dados/6b.png">
 
 
-    <img class="tirada" *ngIf="DatosService.resultado == 2 && DatosService.exito == false" width="500px" src="assets/dados/2m.png">
-    <img class="tirada" *ngIf="DatosService.resultado == 3 && DatosService.exito == false" width="500px" src="assets/dados/3m.png">
-    <img class="tirada" *ngIf="DatosService.resultado == 4 && DatosService.exito == false" width="500px" src="assets/dados/4m.png">
-    <img class="tirada" *ngIf="DatosService.resultado == 5 && DatosService.exito == false" width="500px" src="assets/dados/5m.png">
-    <img class="tirada" *ngIf="DatosService.resultado == 1 && DatosService.exito == false" width="500px" src="assets/dados/1m.png">
+    <img class="tirada" *ngIf="DatosService.resultado == 2 && !DatosService.exito" width="500px" src="assets/dados/2m.png">
+    <img class="tirada" *ngIf="DatosService.resultado == 3 && !DatosService.exito" width="500px" src="assets/dados/3m.png">
+    <img class="tirada" *ngIf="DatosService.resultado == 4 && !DatosService.exito" width="500px" src="assets/dados/4m.png">
+    <img class="tirada" *ngIf="DatosService.resultado == 5 && !DatosService.exito" width="500px" src="assets/dados/5m.png">
+    <img class="tirada" *ngIf="DatosService.resultado == 1 && !DatosService.exito" width="500px" src="assets/dados/1m.png">
 
 </div>

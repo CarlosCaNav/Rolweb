@@ -10,24 +10,24 @@ export class DatosService {
   nombre: string = ""; /* Poner "" luego */
   sexo: string = "j"; /* Poner j luego */
 
-  salud: number = 100;
-
-  puntos:     number = 11; /* poner luego 11  */
+  puntos:     number = 11; /* poner luego 11 */
   fuerza:      number = 0; /* poner luego 0  */
   velocidad:   number = 0; /* poner luego 0  */
   punteria:    number = 0; /* poner luego 0  */
   percepcion:  number = 0; /* poner luego 0  */
 
-  tiempo: number = 0;
+  tiempo: number = 0; /* esto en principio iba a servir para que ocurriesen acontecimientos si se alargaba mucho. Pero de momento no lo veo necesario */
   lugar: number = 0; /* poner luego 0  */
   dados: boolean = false; /* muestra o no muestra el dado */
   resultado: number = 0; /* resultado de la tirada de los dados */
-  exito: boolean = true;
+  exito: boolean = true; /* si el resultado del dado es superior al atributo necesario */
 
   coche: boolean = true; /* Si el coche está roto o no */
   tronco: boolean = true; /* El tronco está en medio del camino */
-  palo: boolean = false;
-  piedra: boolean = false;
+  palo: boolean = false; /* si ha cogido un palo del suelo */
+  salon: boolean = true; /* si hay bichos en el salón */
+  conocimiento: boolean = false; /* esto es si sabe por qué hay bichos gigantes, a partir de aquí puede volver al coche */
+  herramientas: boolean = false; /* si ha entrado en la cochera, ha conseguido las herramientas para poder arreglar el coche */
 
 
 
@@ -55,7 +55,23 @@ export class DatosService {
     else if (this.lugar == 20 && (this.exito == false)) {
       this.lugar = 22
       this.coche = true
-    };
+    }
+
+    else if (this.lugar == 40 && (this.exito == true)) { /* esto verlo con Pedromi */
+      this.lugar = 41;
+    this.salon = false
+  }
+    else if (this.lugar == 40 && (this.exito == false)) {
+      this.lugar = 42}
+
+    else if (this.lugar == 42 && (this.exito == true)) { 
+      this.lugar = 43
+      this.salon = false
+    }
+    else if (this.lugar == 42 && (this.exito == false)) {
+      this.lugar = 44
+      this.salon = false
+    }
 
     this.dados = false;
     console.log(this.lugar)
@@ -68,7 +84,12 @@ export class DatosService {
 
     if (this.lugar == 20) {
       this.palo = true
-    }
+    };
+
+    if (this.lugar == 60) {
+      this.conocimiento = true
+    };
+
     console.log(this.lugar)
     console.log(this.tiempo)
   }
@@ -78,7 +99,7 @@ export class DatosService {
     this.resultado = 0;
     this.dados = true;
     setTimeout(() => {
-      this.resultado = Math.floor(Math.random() * 6 + 1);
+      this.resultado = Math.floor(Math.random() * (6) + 1);
 
       if (habilidad == "fuerza") {
           this.exito = (this.resultado >= 6 - this.fuerza);
