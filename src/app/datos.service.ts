@@ -10,7 +10,7 @@ export class DatosService {
   nombre: string = ""; /* Poner "" luego */
   sexo: string = "j"; /* Poner j luego */
 
-  puntos: number = 11; /* poner luego 11 */
+  puntos: number = 10; /* poner luego 11 */
   fuerza: number = 0; /* poner luego 0  */
   velocidad: number = 0; /* poner luego 0  */
   punteria: number = 0; /* poner luego 0  */
@@ -21,10 +21,12 @@ export class DatosService {
   dados: boolean = false; /* muestra o no muestra el dado */
   resultado: number = 0; /* resultado de la tirada de los dados */
   exito: boolean = true; /* si el resultado del dado es superior al atributo necesario */
+  habilidad: string = ""; /* Esto es necesario por si en un mismo lugar hay dos posibles tiradas */
 
   coche: boolean = true; /* Si el coche está roto o no */
   tronco: boolean = true; /* El tronco está en medio del camino */
   palo: boolean = false; /* si ha cogido un palo del suelo */
+  puerta: boolean = false; /* fracaso al tirar la puerta */
   salon: boolean = true; /* si hay bichos en el salón */
   conocimiento: boolean = false; /* esto es si sabe por qué hay bichos gigantes, a partir de aquí puede volver al coche */
   herramientas: boolean = false; /* si ha entrado en la cochera, ha conseguido las herramientas para poder arreglar el coche */
@@ -73,6 +75,42 @@ export class DatosService {
       this.lugar = 'mantisAplastada';
       this.salon = false;
     }
+    
+    else if (this.lugar == 'volverCoche' && (this.exito == true)) {
+      this.lugar = 'obstaculoTronco';
+    }
+    else if (this.lugar == 'volverCoche' && (this.exito == false)) {
+      this.lugar = 'muerte1';
+    }
+
+    else if (this.lugar == 'obstaculoTronco' && (this.exito == true)) {
+      this.lugar = 'victoria';
+    }
+    else if (this.lugar == 'obstaculoTronco' && (this.exito == false)) {
+      this.lugar = 'muerte2';
+    }
+
+    else if (this.lugar == 'escucha' && (this.exito == true)) {
+      this.lugar = 'mantisSorprendida';
+    }
+    else if (this.lugar == 'escucha' && (this.exito == false)) {
+      this.lugar = 'puertaRuido';
+    }
+    
+    else if (this.lugar == 'puertaRuido' || 'escucha' || 'MantisSorprendida' && this.habilidad == 'fuerza' && (this.exito == true)) { /* Arreglar */
+      this.lugar = 'mantisSorprendida';
+    }
+    else if (this.lugar == 'puertaRuido' || 'escucha' || 'MantisSorprendida' && this.habilidad == 'fuerza' && (this.exito == false)) {/* Arreglar */
+      this.lugar = 'puertaRuido';
+    }
+
+    else if (this.lugar == 'mantisSorprendida' && (this.exito == true)) { /* Arreglar */
+      this.lugar = 'mantisSorprendida';
+    }
+    else if (this.lugar == 'escucha' && (this.exito == false)) { /* Arreglar */
+      this.lugar = 'mantisAtaca';
+    }
+
 
     this.dados = false;
     console.log(this.lugar)
@@ -91,6 +129,10 @@ export class DatosService {
       this.conocimiento = true
     };
 
+    if (this.lugar == 'cochera'){
+      this.herramientas = true
+    }
+
     console.log(this.lugar)/* 
     console.log(this.tiempo) */
   }
@@ -99,6 +141,7 @@ export class DatosService {
   tirada(habilidad: string) {
     this.resultado = 0;
     this.dados = true;
+    this.habilidad = habilidad;
     setTimeout(() => {
       this.resultado = Math.floor(Math.random() * (6) + 1);
 
@@ -140,7 +183,7 @@ export class DatosService {
       F = 0;
     }
     this.fuerza = this.fuerza + F;
-    this.puntos = 11 - this.fuerza - this.velocidad - this.punteria - this.percepcion;
+    this.puntos = 10 - this.fuerza - this.velocidad - this.punteria - this.percepcion;
   }
   atributoV(V: number) {
     if (V == 1 && this.puntos == 0) {
@@ -153,7 +196,7 @@ export class DatosService {
       V = 0;
     }
     this.velocidad = this.velocidad + V;
-    this.puntos = 11 - this.fuerza - this.velocidad - this.punteria - this.percepcion;
+    this.puntos = 10 - this.fuerza - this.velocidad - this.punteria - this.percepcion;
   }
 
   atributoPun(Pun: number) {
@@ -167,7 +210,7 @@ export class DatosService {
       Pun = 0;
     }
     this.punteria = this.punteria + Pun;
-    this.puntos = 11 - this.fuerza - this.velocidad - this.punteria - this.percepcion;
+    this.puntos = 10 - this.fuerza - this.velocidad - this.punteria - this.percepcion;
   }
 
   atributoPer(Per: number) {
@@ -181,7 +224,7 @@ export class DatosService {
       Per = 0;
     }
     this.percepcion = this.percepcion + Per;
-    this.puntos = 11 - this.fuerza - this.velocidad - this.punteria - this.percepcion;
+    this.puntos = 10 - this.fuerza - this.velocidad - this.punteria - this.percepcion;
   }
 
 }
