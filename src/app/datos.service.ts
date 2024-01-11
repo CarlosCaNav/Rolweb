@@ -10,14 +10,14 @@ export class DatosService {
   nombre: string = ""; /* Poner "" luego */
   sexo: string = "j"; /* Poner j luego */
 
-  puntos:     number = 11; /* poner luego 11 */
-  fuerza:      number = 0; /* poner luego 0  */
-  velocidad:   number = 0; /* poner luego 0  */
-  punteria:    number = 0; /* poner luego 0  */
-  percepcion:  number = 0; /* poner luego 0  */
+  puntos: number = 11; /* poner luego 11 */
+  fuerza: number = 0; /* poner luego 0  */
+  velocidad: number = 0; /* poner luego 0  */
+  punteria: number = 0; /* poner luego 0  */
+  percepcion: number = 0; /* poner luego 0  */
 
   tiempo: number = 0; /* esto en principio iba a servir para que ocurriesen acontecimientos si se alargaba mucho. Pero de momento no lo veo necesario */
-  lugar: number = 0; /* poner luego 0  */
+  lugar: string = "presentacion";
   dados: boolean = false; /* muestra o no muestra el dado */
   resultado: number = 0; /* resultado de la tirada de los dados */
   exito: boolean = true; /* si el resultado del dado es superior al atributo necesario */
@@ -31,67 +31,68 @@ export class DatosService {
 
 
 
-  respuesta() {
-    if (this.lugar == 2 && (this.exito == true)) { /* Conduces por el bosque */
-      this.lugar = 10
+  respuesta() { /* boton siguiente del dado */
+    if (this.lugar == 'historia' && (this.exito == true)) { /* Conduces por el bosque */
+      this.lugar = 'roca'
     } /* ves la piedra */
-    else if (this.lugar == 2 && (this.exito == false)) { /* no ves la piedra */
-      this.lugar = 11;
+    else if (this.lugar == 'historia' && (this.exito == false)) { /* no ves la piedra */
+      this.lugar = 'rocaGolpe1';
       this.coche = false;
     }
 
-    else if (this.lugar == 10 && (this.exito == true)) { /* viste la piedra y la esquivas con éxito */
-      this.lugar = 12
+    else if (this.lugar == 'roca' && (this.exito == true)) { /* viste la piedra y la esquivas con éxito */
+      this.lugar = 'rocaSalvas'
     }
-    else if (this.lugar == 10 && (this.exito == false)) {
-      this.lugar = 11
-      this.coche = false
+    else if (this.lugar == 'roca' && (this.exito == false)) {
+      this.lugar = 'rocaGolpe2';
+      this.coche = false;
     }
 
-    else if (this.lugar == 20 && (this.exito == true)) { /* intentas retirar el tronco del camino */
+    else if (this.lugar == 'bosqueIda' && (this.exito == true)) { /* intentas retirar el tronco del camino */
       this.tronco = false;
-      this.lugar = 21
+      this.lugar = 'troncoFuera';
     }
-    else if (this.lugar == 20 && (this.exito == false)) {
-      this.lugar = 22
-      this.coche = true
+    else if (this.lugar == 'bosqueIda' && (this.exito == false)) {
+      this.lugar = 'troncoCamino';
+      this.coche = true;
     }
 
-    else if (this.lugar == 40 && (this.exito == true)) { /* esto verlo con Pedromi */
-      this.lugar = 41;
-    this.salon = false
-  }
-    else if (this.lugar == 40 && (this.exito == false)) {
-      this.lugar = 42}
-
-    else if (this.lugar == 42 && (this.exito == true)) { 
-      this.lugar = 43
-      this.salon = false
+    else if (this.lugar == 'salon' && (this.exito == true)) { /* esto verlo con Pedromi */
+      this.lugar = 'mantisEsquiva';
+      this.salon = false;
     }
-    else if (this.lugar == 42 && (this.exito == false)) {
-      this.lugar = 44
-      this.salon = false
+    else if (this.lugar == 'salon' && (this.exito == false)) {
+      this.lugar = 'mantisAtaca'
+    }
+
+    else if (this.lugar == 'mantisAtaca' && (this.exito == true)) {
+      this.lugar = 'mantisPartida';
+      this.salon = false;
+    }
+    else if (this.lugar == 'mantisAtaca' && (this.exito == false)) {
+      this.lugar = 'mantisAplastada';
+      this.salon = false;
     }
 
     this.dados = false;
     console.log(this.lugar)
   }
 
-  siguiente(t: number) {
+  siguiente(t: string) {
     this.tiempo = this.tiempo + 1;
     this.dados = false;
     this.lugar = t;
 
-    if (this.lugar == 20) {
+    if (this.lugar == 'bosqueIda') {
       this.palo = true
     };
 
-    if (this.lugar == 60) {
+    if (this.lugar == 'dormitorio') {
       this.conocimiento = true
     };
 
-    console.log(this.lugar)
-    console.log(this.tiempo)
+    console.log(this.lugar)/* 
+    console.log(this.tiempo) */
   }
 
 
@@ -102,7 +103,7 @@ export class DatosService {
       this.resultado = Math.floor(Math.random() * (6) + 1);
 
       if (habilidad == "fuerza") {
-          this.exito = (this.resultado >= 6 - this.fuerza);
+        this.exito = (this.resultado >= 6 - this.fuerza);
       }
       if (habilidad == "velocidad") {
         this.exito = this.resultado >= 6 - this.velocidad;
@@ -113,14 +114,14 @@ export class DatosService {
       }
 
       if (habilidad == "percepcion") {
-        this.exito = this.resultado >= 6 - this.percepcion
+        this.exito = this.resultado >= 6 - this.percepcion;
       }
-/* 
-      this.resultado = this.resultado; */
+      /* 
+            this.resultado = this.resultado; */
 
       console.log(this.resultado);
       console.log(this.exito);
-      console.log(this.lugar)
+      /* console.log(this.lugar) */
     }, 1000);
   }
 
@@ -160,7 +161,7 @@ export class DatosService {
       Pun = 0;
     } else if (Pun == 1 && this.punteria == 4) {
       Pun = 0;
-    }else if (Pun == -1 && this.puntos == 20) {
+    } else if (Pun == -1 && this.puntos == 20) {
       Pun = 0;
     } else if (Pun == -1 && this.punteria == 0) {
       Pun = 0;
