@@ -44,10 +44,10 @@
 </div>
 
 <div *ngIf="DatosService.lugar == 'rocaGolpe2'"> <!-- 13 -->
-    <article class="texto">Pegas un volantazo y clavas el freno pero tu reacción ha sido demasiado lenta cuando notas un
-        golpe en la parte inferior del coche.
+    <article class="texto">Pegas un volantazo y clavas el freno pero tu reacción ha sido demasiado lenta y notas un
+        golpe en la parte inferior del coche. <br><br>
         Bajas con la esperanza de que no haya sido nada pero descubres que el golpe ha perforado el depósito de gasolina
-        y se está derramando en la tierra.
+        y se está derramando en la tierra.<br><br>
         En el coche no tienes nada que te sirva para taponar la fuga ni para almacenar la gasolina que cae.
         "Mal sitio para quedarse atrapado" piensas, ya que no hay cobertura y estás lejos de la carretera.
         Esperas poder encontrar en la casa gasolina y las herramientas necesarias para poder arreglar la fisura.
@@ -59,7 +59,7 @@
     <article class="texto"> Mientras caminas, sientes miedo, sabes que en esta zona no hay ningún animal peligroso ni
         nadie cerca,
         pero ese pequeño miedo irracional al estar en mitad de la nada de noche no te lo puedes quitar de la cabeza,
-        así que agarras un palo del suelo, siempre transmite seguridad...
+        así que agarras un palo del suelo, siempre transmite seguridad...<br><br>
         Avanzas unos metros y ves que en mitad del sendero hay el tronco de un arbol caido.
     </article>
     <button (click)="DatosService.tirada('fuerza')"> tratar de apartarlo del camino (fuerza)</button>
@@ -83,7 +83,7 @@
     <article class="texto"> Llegas a un claro, y ya por fin ves la casa.
         Ya es de noche, una noche completamente despejada y silenciosa, a medida que avanzas sólo escuchas tus pasos y
         algún grillo a lo lejos,
-        hasta que de pronto escuchas un zumbido acercarse y le das un manotazo reflejo cuando lo notas detrás en tu
+        hasta que de pronto escuchas un zumbido acercarse y le das un manotazo cuando lo notas detrás en tu
         cuello.
         ¿Qué es eso? te preguntas asustad{{DatosService.sexo}} al ver retorcerse en el suelo lo que parece un mosquito
         más grande que tu mano. <br> <br>
@@ -128,14 +128,14 @@
     <button (click)="DatosService.siguiente('salon')"> entrar</button>
     <button (click)="DatosService.lugar = 'escucha'"> escuchar </button>
     <button (click)="DatosService.tirada('fuerza')"> abrir la puerta de una patada (lugar bugueado, no pulsar) </button>
-    <button (click)="DatosService.siguiente('exteriorVentana')"> volver a la ventana rota</button>
+    <button (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa</button>
 </div>
 
 <div *ngIf="DatosService.lugar == 'puertaSilencio'">
     <article class="texto"> Vuelves a la puerta de entrada, esta vez sin ningún peligro en el interior <br>
     </article>
     <button (click)="DatosService.siguiente('salon')"> entrar</button>
-    <button (click)="DatosService.siguiente('exteriorVentana')"> volver a la ventana rota</button>
+    <button (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa</button>
 </div>
 
 
@@ -155,13 +155,13 @@
 
 <div *ngIf="DatosService.lugar == 'mantisAtaca'">
     <article class="texto"> La mantis salta sobre ti, te ataca y tratas de quitártela de encima antes de que pueda hacerte daño <br>
-        <button (click)="DatosService.tirada('fuerza')"> Intentas partirla en dos con tus manos (fuerza)</button>
+        <button (click)="DatosService.tirada('fuerza')"> agarrar la mantis con tus manos (fuerza)</button>
         <!-- exito 43 fallo 44  -->
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'mantisPartida'">
     <article class="texto"> Pegas un grito de guerra mientras la partes en dos con tus manos lanzando cada parte en una
-        direción.<br><br>AaAaAaAahhhh!!!<br>
+        direción.<br><br>AaAaAaAahhhh!!!<br><br>
 
         <div *ngIf="DatosService.conocimiento == true">
             Al fin y al cabo es sólo un insecto aunque sea gigante, pero ¿y si algún animal más grande hubiera entrado
@@ -185,7 +185,7 @@
 
 <div *ngIf="DatosService.lugar == 'salon' && DatosService.salon == false">
     <article class="texto"> El salón no tiene demasiados adornos, un sofá viejo, una TV vieja, y algún cuadro feo.
-        El salón comunica con la cocina, la cual no ves que tenga nada particular,
+        El salón comunica con la cocina, la cual no ves que tenga nada particular, también comunica con
         un dormitorio con material de laboratorio y una cochera llena de trastos <br>
         <button (click)="DatosService.siguiente('cochera')">entrar a la
             cochera</button>
@@ -224,11 +224,9 @@
     <article class="texto"> Al entrar en la habitación ves cristales y un líquido violeta vertido por la el suelo.
         Hay una puerta que da a lo que parece el salón.
         Husmeas las notas que te encuentras entre las probetas y descubres que tu tío ha estado desarrollando un
-        "elixir"22
-        que pretendía curar ciertas enfermedades, y lo único que consiguió es que los animales que entraban en contacto
-        con dicha sustancia
-        crecieran desproporcionadamente. Sientes como el miedo recorre tu cuerpo al tener la certeza de que este lugar
-        no es nada seguro
+        "elixir" con el que pretendía curar ciertas enfermedades, y lo único que consiguió es que los animales que entraban en contacto
+        con dicha sustancia crecieran desproporcionadamente.<br><br>
+         Sientes como el miedo recorre tu cuerpo al tener la certeza de que este lugar no es nada seguro
         <div *ngIf="DatosService.coche == true"> "¡Debería volver cuanto antes al coche!" </div> <br>
         <div *ngIf="DatosService.coche == true"> "¡Tengo que encontrar cómo reparar el coche!" </div>
         <button *ngIf="DatosService.salon == true" (click)="DatosService.siguiente('salon')">entrar al salón</button>
@@ -252,12 +250,12 @@
 
 <div *ngIf="DatosService.lugar == 'cochera'">
     <article class="texto"> La cochera está llena de chismes y suciedad, por suerte,
-        entre los trastos encuentras todo lo necesario para poder reparar el coche.
+        entre los trastos encuentras todo lo necesario para poder reparar el coche. <br><br>
         <div *ngIf="DatosService.conocimiento == false">Aunque tengas mucho miedo tras el ataque de dos insectos
             gigantes,
             sería interesante ver la habitación que falta antes de marcharse</div><br>
 
-        <button (click)="DatosService.siguiente('salon')">entrar al salón</button>
+        <button (click)="DatosService.siguiente('salon')">volver al salón</button>
         <button *ngIf="DatosService.conocimiento == true" (click)="DatosService.siguiente('volverCoche')"> volver al
             coche
             inmediatamente
@@ -267,7 +265,7 @@
 
 <div *ngIf="DatosService.lugar == 'volverCoche' && DatosService.tronco == false">
     <article class="texto"> Cuando sales al exterior ves pisadas en el suelo enormes,
-        como si de un oso se tratase, pero aquí no hay osos... pero sí Zorros o perros salvajes.
+        como si de un oso se tratase, pero aquí no hay osos... pero sí zorros o perros salvajes.
         Corres hacia el coche con todas tus fuerzas sin mirar atrás.
         Sientes un alivio inmenso al pasar por donde retiraste el tronco y ver que tienes el camino despejado.
         Entras al coche, recuperas el aliento, y tras asegurarte que no hay peligro, sales reparas el coche y te vas...
@@ -279,7 +277,7 @@
 </div>
 <div *ngIf="DatosService.lugar == 'volverCoche' && DatosService.tronco == true">
     <article class="texto"> Cuando sales al exterior ves pisadas en el suelo enormes,
-        como si de un oso se tratase, pero aquí no hay osos... pero sí Zorros o perros salvajes.
+        como si de un oso se tratase, pero aquí no hay osos... pero sí zorros o perros salvajes.
         Corres hacia el coche con todas tus fuerzas intentando no tropezar con nada en la oscuridad.<br>
 
         <button (click)="DatosService.tirada('percepcion')"> Percepción</button>
