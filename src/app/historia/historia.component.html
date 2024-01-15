@@ -170,16 +170,21 @@
         <div *ngIf="DatosService.conocimiento == false">
             ¿Cómo es posible que existan estos insectos gigantes? ¿Y si hubiera otros animales más peligrosos? </div>
         <br>
-        <button (click)="DatosService.siguiente('salon')">mirar al rededor</button>
+        <button (click)="DatosService.siguiente('salon')">mirar alrededor</button>
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'mantisAplastada'">
     <article class="texto"> te desgarra la cara y hasta empiezas a temer por tu vida. ¿cómo un insecto va a hacerme
         esto?
         <br><br> Te das media vuelta y te dejas caer sobre el insecto espachurrándolo contra el suelo.
-        ¿Cómo me ha podido hacer esto un simple insecto aunque sea gigante? ¿Y si un animal más grande también ha
-        entrado en contacto con la sustancia?<br>
-        <button (click)="DatosService.siguiente('salon')">mirar al rededor</button>
+        <div *ngIf="DatosService.conocimiento == true">
+            Al fin y al cabo es sólo un insecto aunque sea gigante, pero ¿y si algún animal más grande hubiera entrado
+            en
+            contacto con la sustancia? </div>
+        <div *ngIf="DatosService.conocimiento == false">
+            ¿Cómo es posible que existan estos insectos gigantes? ¿Y si hubiera otros animales más peligrosos? </div>
+        <br>
+        <button (click)="DatosService.siguiente('salon')">mirar alrededor</button>
     </article>
 </div>
 
@@ -192,7 +197,7 @@
         <button (click)="DatosService.siguiente('puertaSilencio')">salir al exterior</button>
         <button (click)="DatosService.siguiente('dormitorio')">entrar al dormitorio</button>
         <button *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
-            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente <br> ya he visto lo suficiente. <br> este lugar no es seguro
         </button>
         <button
             *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
@@ -249,8 +254,8 @@
 
 
 <div *ngIf="DatosService.lugar == 'cochera'">
-    <article class="texto"> La cochera está llena de chismes y suciedad, por suerte,
-        entre los trastos encuentras todo lo necesario para poder reparar el coche. <br><br>
+    <article class="texto"> La cochera está llena de chismes y suciedad  <div *ngIf="DatosService.coche == false">, por suerte,
+        entre los trastos encuentras todo lo necesario para poder reparar el coche. </div><br><br>
         <div *ngIf="DatosService.conocimiento == false">Aunque tengas mucho miedo tras el ataque de dos insectos
             gigantes,
             sería interesante ver la habitación que falta antes de marcharse</div><br>
