@@ -44,7 +44,18 @@
     margin-top: 100px;
     border: 3px solid rgb(78, 78, 78);
     border-radius: 20px;
-    box-shadow: 0px 0px 30px 5px rgb(0, 128, 21);
+    box-shadow: 0px 0px 30px 5px rgb(99, 99, 99);
+    animation-name: delay;
+    animation-duration: 200ms;
+  }
+  
+  @keyframes delay {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
 }
 
 .oscuro{
@@ -54,4 +65,15 @@
     height: 100%;
     width: 100%;
     opacity: 0.9;
+    animation-name: delayO;
+    animation-duration: 1000ms;
+  }
+  
+  @keyframes delayO {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.9;
+      }
 }

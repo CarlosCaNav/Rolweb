@@ -18,6 +18,8 @@ export class DatosService {
 
   lugar: string = "presentacion";
   dados: boolean = false; /* muestra o no muestra el dado */
+
+  // TO DO hacer que no sera una variable global
   resultado: number = 0; /* resultado de la tirada de los dados */
   exito: boolean = true; /* si el resultado del dado es superior al atributo necesario */
   habilidad: string = ""; /* Esto es necesario por si en un mismo lugar hay dos posibles tiradas */
@@ -31,8 +33,14 @@ export class DatosService {
   herramientas: boolean = false; /* si ha entrado en la cochera, ha conseguido las herramientas para poder arreglar el coche */
 
   pasos: number = 0; /* pasos */
-  horas: any[] = [];
-  duracion: any = "";
+  horaInicio: Date = new Date();
+  duracionMinutos: number = 0;
+  duracionSegundos: number = 0;
+  tiradas: number[] = [];
+  mediaTiradas: number = 0;
+
+  sonidos: boolean = false;
+  ambiente = new Audio('assets/sonidos/suspense.ogg');
 
 
 
@@ -113,12 +121,13 @@ export class DatosService {
     else if (this.lugar == 'escucha' && (this.exito == false)) { /* Arreglar */
       this.lugar = 'mantisAtaca';
     }
-
+    this.tiradas.push(this.resultado);
 
     this.pasos = this.pasos + 1;
     this.dados = false;
-    console.log(this.pasos)
-    console.log(this.lugar)
+    console.log(this.pasos);
+    console.log(this.lugar);
+    console.log(this.tiradas);
   }
 
   siguiente(t: string) {
@@ -126,6 +135,9 @@ export class DatosService {
     this.dados = false;
     this.lugar = t;
 
+    if (this.lugar == 'historia') {
+      this.sonidos = true
+    };
     if (this.lugar == 'bosqueIda') {
       this.palo = true
     };
@@ -139,14 +151,36 @@ export class DatosService {
     }
 
     if (this.pasos == 1) {
-      this.horas.push(new Date());
+      this.horaInicio = new Date(); /* Para que el tiempo empiece cuando empieza el juego */
     }
     if (this.lugar == "estadisticas") {
-      this.horas.push(new Date());
-      this.duracion = Math.abs(this.horas[1] - this.horas[0])/1000/60 * Math.round(1);
+      const horaFinal = new Date();
+      const segundosTotales = (horaFinal.getTime() - this.horaInicio.getTime()) / 1000;
+      console.log("Segundos totales: " + segundosTotales);
+
+      if (segundosTotales > 60) {
+        this.duracionMinutos = Math.floor(segundosTotales / 60);
+        this.duracionSegundos = Math.floor(segundosTotales - (this.duracionMinutos * 60)); 
+      } else {
+        this.duracionSegundos = Math.floor(segundosTotales);
+        this.duracionMinutos = 0;
+      }
+
+      // media
+      let suma = 0;
+      for (let i = 0; i < this.tiradas.length; i++) {
+        suma = suma + this.tiradas[i];
+      }
+
+      this.mediaTiradas = suma / this.tiradas.length;
     }
 
-    console.log(this.horas)
+
+    if (this.sonidos == true) {
+      this.ambiente.play();
+    }
+
+    console.log(this.sonidos)
     console.log(this.lugar)
     console.log(this.pasos)
   }
@@ -179,7 +213,7 @@ export class DatosService {
       console.log(this.resultado);
       console.log(this.exito);
       /* console.log(this.lugar) */
-    }, 1000);
+    }, 2000);
   }
 
   cambioSexo(g: string) {

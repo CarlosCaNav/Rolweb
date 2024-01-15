@@ -107,7 +107,8 @@
 <div *ngIf="DatosService.lugar == 'estadisticas'">
     <article class="texto">
         <div style='text-align:center'><b>Estadísticas</b><br><br>
-            duración {{DatosService.duracion}}
+            Duración: {{DatosService.duracionMinutos}} minutos y {{DatosService.duracionSegundos}} segundos<br><br><br>
+            media de las tiradas {{DatosService.mediaTiradas}}
             <br><br><br>
             <button (click)="DatosService.siguiente('presentacion')">anterior</button>
             <br><br><br>

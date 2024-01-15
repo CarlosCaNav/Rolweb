@@ -2,5 +2,20 @@
     margin: 40px;
     font-size: 30px;
     text-align: justify;
-    color: white
+    color: white;
+    animation-name: delayP;
+    animation-duration: 3000ms;
+  }
+  
+  @keyframes delayP {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+}
+
+.centrada{    
+    margin-left: calc(50% - 150px);
 }

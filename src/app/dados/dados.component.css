@@ -11,6 +11,20 @@
 
 .tirada{
     border-radius: 20px;
+    animation-name: delayT;
+    animation-duration: 3000ms;
+  }
+  
+  @keyframes delayT {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        opacity: 1;
+      }
     
 }
 
