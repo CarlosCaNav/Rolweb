@@ -69,16 +69,13 @@
                 </div>
             </div>
 
-
-
+            <button (click)="DatosService.siguiente('presentacion')">anterior</button>
+            <div *ngIf="DatosService.sexo !='j' && DatosService.puntos == 0" style='text-align:left'>
+                <div style='text-align:right'><button
+                        (click)="DatosService.siguiente('historia')">siguiente</button>&emsp;&nbsp;&emsp;</div>
+            </div>
         </div>
     </article>
-
-    <button (click)="DatosService.siguiente('presentacion')">anterior</button>
-    <div *ngIf="DatosService.sexo !='j' && DatosService.puntos == 0" style='text-align:left'>
-        <div style='text-align:right'><button
-                (click)="DatosService.siguiente('historia')">siguiente</button>&emsp;&nbsp;&emsp;</div>
-    </div>
 </div>
 
 
@@ -97,6 +94,24 @@
                 (click)="DatosService.fuerza = 2 && DatosService.velocidad = 2 && DatosService.punteria = 2 && DatosService.percepcion = 2"
                 (click)="DatosService.lugar = 'puertaRuido'">
                 ir</button>
-                <br><br><br>
-                <button (click)="DatosService.siguiente('presentacion')">anterior</button>
+            <br><br><br>
+            <button (click)="DatosService.siguiente('presentacion')">anterior</button>
+            <br><br><br>
+            <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
         </div>
+    </article>
+</div>
+
+
+
+<div *ngIf="DatosService.lugar == 'estadisticas'">
+    <article class="texto">
+        <div style='text-align:center'><b>Estadísticas</b><br><br>
+            duración {{DatosService.duracion}}
+            <br><br><br>
+            <button (click)="DatosService.siguiente('presentacion')">anterior</button>
+            <br><br><br>
+            <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        </div>
+    </article>
+</div>

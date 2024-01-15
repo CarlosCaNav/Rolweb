@@ -16,7 +16,6 @@ export class DatosService {
   punteria: number = 0; /* poner luego 0  */
   percepcion: number = 0; /* poner luego 0  */
 
-  tiempo: number = 0; /* esto en principio iba a servir para que ocurriesen acontecimientos si se alargaba mucho. Pero de momento no lo veo necesario */
   lugar: string = "presentacion";
   dados: boolean = false; /* muestra o no muestra el dado */
   resultado: number = 0; /* resultado de la tirada de los dados */
@@ -30,6 +29,10 @@ export class DatosService {
   salon: boolean = true; /* si hay bichos en el salón */
   conocimiento: boolean = false; /* esto es si sabe por qué hay bichos gigantes, a partir de aquí puede volver al coche */
   herramientas: boolean = false; /* si ha entrado en la cochera, ha conseguido las herramientas para poder arreglar el coche */
+
+  pasos: number = 0; /* pasos */
+  horas: any[] = [];
+  duracion: any = "";
 
 
 
@@ -59,7 +62,7 @@ export class DatosService {
       this.coche = true;
     }
 
-    else if (this.lugar == 'salon' && (this.exito == true)) { /* esto verlo con Pedromi */
+    else if (this.lugar == 'salon' && (this.exito == true)) {
       this.lugar = 'mantisEsquiva';
       this.salon = false;
     }
@@ -75,7 +78,7 @@ export class DatosService {
       this.lugar = 'mantisAplastada';
       this.salon = false;
     }
-    
+
     else if (this.lugar == 'volverCoche' && (this.exito == true)) {
       this.lugar = 'obstaculoTronco';
     }
@@ -96,7 +99,7 @@ export class DatosService {
     else if (this.lugar == 'escucha' && (this.exito == false)) {
       this.lugar = 'puertaRuido';
     }
-    
+
     else if (this.lugar == 'puertaRuido' || 'escucha' || 'MantisSorprendida' && this.habilidad == 'fuerza' && (this.exito == true)) { /* Arreglar */
       this.lugar = 'mantisSorprendida';
     }
@@ -112,12 +115,14 @@ export class DatosService {
     }
 
 
+    this.pasos = this.pasos + 1;
     this.dados = false;
+    console.log(this.pasos)
     console.log(this.lugar)
   }
 
   siguiente(t: string) {
-    this.tiempo = this.tiempo + 1;
+    this.pasos = this.pasos + 1;
     this.dados = false;
     this.lugar = t;
 
@@ -129,12 +134,21 @@ export class DatosService {
       this.conocimiento = true
     };
 
-    if (this.lugar == 'cochera'){
+    if (this.lugar == 'cochera') {
       this.herramientas = true
     }
 
-    console.log(this.lugar)/* 
-    console.log(this.tiempo) */
+    if (this.pasos == 1) {
+      this.horas.push(new Date());
+    }
+    if (this.lugar == "estadisticas") {
+      this.horas.push(new Date());
+      this.duracion = Math.abs(this.horas[1] - this.horas[0])/1000/60 * Math.round(1);
+    }
+
+    console.log(this.horas)
+    console.log(this.lugar)
+    console.log(this.pasos)
   }
 
 

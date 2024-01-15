@@ -1,37 +1,44 @@
 <div class="panel">
-<p class="uno">panel works!</p>
-<div class="dos"> <br> Objetos <br><br> 
-  <div *ngIf="DatosService.palo == true">Palo de madera</div> 
-  <div *ngIf="DatosService.herramientas == true">herramientas</div> 
- </div> 
-<div class="tres">
-  <div class= atributos>
-    <div class = cajaA>Fuerza <br> 
+  <div class="uno">
+    <p class="atributos">panel works!</p>
+  </div>
+  <div class="dos">
+    <div class="atributos">
+      <br> Objetos <br><br>
+      <div *ngIf="DatosService.palo == true">Palo de madera</div>
+      <div *ngIf="DatosService.herramientas == true">herramientas</div>
+    </div>
+  </div>
+  <div class="tres">
+    <div class="atributos">
+      <div class=cajaA>Fuerza <br>
         <img *ngIf="DatosService.fuerza == 0" width="130px" src="assets/0.png">
         <img *ngIf="DatosService.fuerza == 1" width="130px" src="assets/1.png">
         <img *ngIf="DatosService.fuerza == 2" width="130px" src="assets/2.png">
         <img *ngIf="DatosService.fuerza == 3" width="130px" src="assets/3.png">
         <img *ngIf="DatosService.fuerza == 4" width="130px" src="assets/4.png">
-</div>
-    <div class = cajaA>Velocidad <br> 
-    <img *ngIf="DatosService.velocidad == 0" width="130px" src="assets/0.png">
-    <img *ngIf="DatosService.velocidad == 1" width="130px" src="assets/1.png">
-    <img *ngIf="DatosService.velocidad == 2" width="130px" src="assets/2.png">
-    <img *ngIf="DatosService.velocidad == 3" width="130px" src="assets/3.png">
-    <img *ngIf="DatosService.velocidad == 4" width="130px" src="assets/4.png">
-</div>
-<div class = cajaA>Puntería <br>
-<img *ngIf="DatosService.punteria == 0" width="130px" src="assets/0.png">
-<img *ngIf="DatosService.punteria == 1" width="130px" src="assets/1.png">
-<img *ngIf="DatosService.punteria == 2" width="130px" src="assets/2.png">
-<img *ngIf="DatosService.punteria == 3" width="130px" src="assets/3.png">
-<img *ngIf="DatosService.punteria == 4" width="130px" src="assets/4.png">
-</div>
-<div class = cajaA>Percepción <br>
-<img *ngIf="DatosService.percepcion == 0" width="130px" src="assets/0.png">
-<img *ngIf="DatosService.percepcion == 1" width="130px" src="assets/1.png">
-<img *ngIf="DatosService.percepcion == 2" width="130px" src="assets/2.png">
-<img *ngIf="DatosService.percepcion == 3" width="130px" src="assets/3.png">
-<img *ngIf="DatosService.percepcion == 4" width="130px" src="assets/4.png">
-</div> </div>
+      </div>
+      <div class=cajaA>Velocidad <br>
+        <img *ngIf="DatosService.velocidad == 0" width="130px" src="assets/0.png">
+        <img *ngIf="DatosService.velocidad == 1" width="130px" src="assets/1.png">
+        <img *ngIf="DatosService.velocidad == 2" width="130px" src="assets/2.png">
+        <img *ngIf="DatosService.velocidad == 3" width="130px" src="assets/3.png">
+        <img *ngIf="DatosService.velocidad == 4" width="130px" src="assets/4.png">
+      </div>
+      <div class=cajaA>Puntería <br>
+        <img *ngIf="DatosService.punteria == 0" width="130px" src="assets/0.png">
+        <img *ngIf="DatosService.punteria == 1" width="130px" src="assets/1.png">
+        <img *ngIf="DatosService.punteria == 2" width="130px" src="assets/2.png">
+        <img *ngIf="DatosService.punteria == 3" width="130px" src="assets/3.png">
+        <img *ngIf="DatosService.punteria == 4" width="130px" src="assets/4.png">
+      </div>
+      <div class=cajaA>Percepción <br>
+        <img *ngIf="DatosService.percepcion == 0" width="130px" src="assets/0.png">
+        <img *ngIf="DatosService.percepcion == 1" width="130px" src="assets/1.png">
+        <img *ngIf="DatosService.percepcion == 2" width="130px" src="assets/2.png">
+        <img *ngIf="DatosService.percepcion == 3" width="130px" src="assets/3.png">
+        <img *ngIf="DatosService.percepcion == 4" width="130px" src="assets/4.png">
+      </div>
+    </div>
+  </div>
 </div>

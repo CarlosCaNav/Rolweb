@@ -5,6 +5,8 @@
         de una vieja casa en mitad del bosque de un familiar lejano, no tienes ningún interés en ella,
         pero por verla y ver si tiene posibilidad de inversión no pierdes nada. Sales de trabajar,
         te montas en el coche y vas directo al lugar. <br><br>
+        <img src="../../assets/imagenes/cocheCamino.jpeg" height="300" >
+        <br>
 
         Abandonas la carretera secundaria, y te metes por un camino en el que cuanto más avanzas, en peor estado está.
         <br><br>Poco a poco va anocheciendo.
@@ -237,9 +239,13 @@
         <button *ngIf="DatosService.salon == false" (click)="DatosService.siguiente('puertaSilencio')">salir y volver a
             la puerta
             principal</button>
-        <button *ngIf="DatosService.coche == true" (click)="DatosService.siguiente('volverCoche')"> volver al coche
-            inmediatamente
-        </button>
+            <button *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+            </button>
+            <button
+                *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+            </button>
     </article>
 </div>
 
@@ -249,7 +255,7 @@
         entre los trastos encuentras todo lo necesario para poder reparar el coche.
         <div *ngIf="DatosService.conocimiento == false">Aunque tengas mucho miedo tras el ataque de dos insectos
             gigantes,
-            sería interesante ver la habitación que falta antes de marcharse</div>
+            sería interesante ver la habitación que falta antes de marcharse</div><br>
 
         <button (click)="DatosService.siguiente('salon')">entrar al salón</button>
         <button *ngIf="DatosService.conocimiento == true" (click)="DatosService.siguiente('volverCoche')"> volver al
@@ -267,20 +273,21 @@
         Entras al coche, recuperas el aliento, y tras asegurarte que no hay peligro, sales reparas el coche y te vas...
         <br><br><br>
         ¡Enhorabuena! Has completado la aventura! Y perdóname si te pusiste puntos en "puntería" ya que no han servido
-        para nada.
+        para nada.<br>
+        <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'volverCoche' && DatosService.tronco == true">
     <article class="texto"> Cuando sales al exterior ves pisadas en el suelo enormes,
         como si de un oso se tratase, pero aquí no hay osos... pero sí Zorros o perros salvajes.
-        Corres hacia el coche con todas tus fuerzas intentando no tropezar con nada en la oscuridad.
+        Corres hacia el coche con todas tus fuerzas intentando no tropezar con nada en la oscuridad.<br>
 
         <button (click)="DatosService.tirada('percepcion')"> Percepción</button>
     </article>
 </div>
 
 <div *ngIf="DatosService.lugar == 'obstaculoTronco'">
-    <article class="texto"> Ves el tronco que no retiraste del camino, ahora tienes que saltarlo.
+    <article class="texto"> Ves el tronco que no retiraste del camino, ahora tienes que saltarlo.<br>
 
         <button (click)="DatosService.tirada('velocidad')"> Saltar el tronco (velocidad) </button>
     </article>
@@ -293,7 +300,8 @@
         Miras al otro lanzando
         y como si de una pesadilla se tratase, unos colmillos a tu lado de un animal inmenso brillan en la oscuridad.
         Apenas puedes reaccionar cuando se avalanzan sobre ti... Fin de la partida... <br><br>
-        Primero pierdes la partida y luego descubres que repartiste puntos a la habilidad "puntería" para nada...
+        Primero pierdes la partida y luego descubres que repartiste puntos a la habilidad "puntería" para nada...<br>
+        <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'muerte2'">
@@ -301,7 +309,8 @@
         Miras a tu alrededor, no has sido capaz de esquivar el tronco del camino. Miras al otro lanzando
         y como si de una pesadilla se tratase, unos colmillos a tu lado de un animal inmenso brillan en la oscuridad.
         Apenas puedes reaccionar cuando se avalanzan sobre ti... Fin de la partida... <br><br>
-        Primero pierdes la partida y luego descubres que repartiste puntos a la habilidad "puntería" para nada...
+        Primero pierdes la partida y luego descubres que repartiste puntos a la habilidad "puntería" para nada...<br>
+        <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'victoria'">
@@ -309,6 +318,20 @@
         el coche y te vas...
         <br><br><br>
         ¡Enhorabuena! Has completado la aventura! Y perdóname si te pusiste puntos en "puntería" ya que no han servido
-        para nada.
+        para nada.<br>
+        <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+    </article>
+</div>
+<div *ngIf="DatosService.lugar == 'victoria'">
+    <article class="texto"> Entras al coche, recuperas el aliento, y tras asegurarte que no hay peligro, sales reparas
+        el coche y te vas...
+        <br><br><br>
+        ¡Enhorabuena! Has completado la aventura! Y perdóname si te pusiste puntos en "puntería" ya que no han servido
+        para nada.<br>
+        <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+    </article>
+</div>
+<div *ngIf="DatosService.lugar == 'estadisticas'">
+    <article class="texto"> {{DatosService.horas[0] [1]}}
     </article>
 </div>

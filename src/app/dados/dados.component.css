@@ -3,7 +3,7 @@
     height: 500px;
     width: 500px;
     border-radius: 2px solid red;
-    background-color: blue;
+    background-color: black;
     text-align: center;
     margin-block-start: 0px;
     border-radius: 20px;
@@ -11,6 +11,7 @@
 
 .tirada{
     border-radius: 20px;
+    
 }
 
 .botones{

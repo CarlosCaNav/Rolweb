@@ -7,13 +7,16 @@
 .uno{
     height: 200px;
     width: 200px;
-    border: 1px solid red;
+   /*  border: 1px solid red; */
 }.dos{
     height: 200px;
     width: 200px;
-    border: 1px solid green;
+/*     border: 1px solid green; */
 }.tres{
     height: 200px;
     width: 200px;
-    border: 1px solid blue;
+}
+.atributos{
+    margin: 15px;
+    text-align: center;
 }
