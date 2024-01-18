@@ -19,7 +19,6 @@ export class DatosService {
   lugar: string = "presentacion";
   dados: boolean = false; /* muestra o no muestra el dado */
 
-  // TO DO hacer que no sera una variable global
   resultado: number = 0; /* resultado de la tirada de los dados */
   exito: boolean = true; /* si el resultado del dado es superior al atributo necesario */
   habilidad: string = ""; /* Esto es necesario por si en un mismo lugar hay dos posibles tiradas */
@@ -160,7 +159,7 @@ export class DatosService {
 
       if (segundosTotales > 60) {
         this.duracionMinutos = Math.floor(segundosTotales / 60);
-        this.duracionSegundos = Math.floor(segundosTotales - (this.duracionMinutos * 60)); 
+        this.duracionSegundos = Math.floor(segundosTotales - (this.duracionMinutos * 60));
       } else {
         this.duracionSegundos = Math.floor(segundosTotales);
         this.duracionMinutos = 0;

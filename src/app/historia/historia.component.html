@@ -5,7 +5,8 @@
         de una vieja casa en mitad del bosque de un familiar lejano, no tienes ningún interés en ella,
         pero por verla y ver si tiene posibilidad de inversión no pierdes nada. Sales de trabajar,
         te montas en el coche y vas directo al lugar. <br><br>
-        <img class= "centrada" src="../../assets/imagenes/cocheCamino.jpeg" height="300" >
+        <img class="centrada" src="../../assets/imagenes/cocheCamino.jpeg" height="300">
+        <br>
         <br>
 
         Abandonas la carretera secundaria, y te metes por un camino en el que cuanto más avanzas, en peor estado está.
@@ -117,7 +118,8 @@
 
 
 <div *ngIf="DatosService.lugar == 'cuadro'">
-    <article class="texto">Pintas involuntariamente un cuadro abstracto en la pared con las tripas de la mantis del palo que le das<br>
+    <article class="texto">Pintas involuntariamente un cuadro abstracto en la pared con las tripas de la mantis del palo
+        que le das<br>
     </article>
     <button (click)="DatosService.lugar = 'salon'"> Mirar a tu alrededor</button>
 </div>
@@ -154,7 +156,8 @@
 </div>
 
 <div *ngIf="DatosService.lugar == 'mantisAtaca'">
-    <article class="texto"> La mantis salta sobre ti, te ataca y tratas de quitártela de encima antes de que pueda hacerte daño <br>
+    <article class="texto"> La mantis salta sobre ti, te ataca y tratas de quitártela de encima antes de que pueda
+        hacerte daño <br>
         <button (click)="DatosService.tirada('fuerza')"> agarrar la mantis con tus manos (fuerza)</button>
         <!-- exito 43 fallo 44  -->
     </article>
@@ -197,7 +200,8 @@
         <button (click)="DatosService.siguiente('puertaSilencio')">salir al exterior</button>
         <button (click)="DatosService.siguiente('dormitorio')">entrar al dormitorio</button>
         <button *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
-            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente <br> ya he visto lo suficiente. <br> este lugar no es seguro
+            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente <br> ya he visto lo
+            suficiente. <br> este lugar no es seguro
         </button>
         <button
             *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
@@ -229,9 +233,10 @@
     <article class="texto"> Al entrar en la habitación ves cristales y un líquido violeta vertido por la el suelo.
         Hay una puerta que da a lo que parece el salón.
         Husmeas las notas que te encuentras entre las probetas y descubres que tu tío ha estado desarrollando un
-        "elixir" con el que pretendía curar ciertas enfermedades, y lo único que consiguió es que los animales que entraban en contacto
+        "elixir" con el que pretendía curar ciertas enfermedades, y lo único que consiguió es que los animales que
+        entraban en contacto
         con dicha sustancia crecieran desproporcionadamente.<br><br>
-         Sientes como el miedo recorre tu cuerpo al tener la certeza de que este lugar no es nada seguro
+        Sientes como el miedo recorre tu cuerpo al tener la certeza de que este lugar no es nada seguro
         <div *ngIf="DatosService.coche == true"> "¡Debería volver cuanto antes al coche!" </div> <br>
         <div *ngIf="DatosService.coche == true"> "¡Tengo que encontrar cómo reparar el coche!" </div>
         <button *ngIf="DatosService.salon == true" (click)="DatosService.siguiente('salon')">entrar al salón</button>
@@ -242,20 +247,21 @@
         <button *ngIf="DatosService.salon == false" (click)="DatosService.siguiente('puertaSilencio')">salir y volver a
             la puerta
             principal</button>
-            <button *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
-                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
-            </button>
-            <button
-                *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
-                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
-            </button>
+        <button *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
+            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+        </button>
+        <button
+            *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
+            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+        </button>
     </article>
 </div>
 
 
 <div *ngIf="DatosService.lugar == 'cochera'">
-    <article class="texto"> La cochera está llena de chismes y suciedad  <div *ngIf="DatosService.coche == false">, por suerte,
-        entre los trastos encuentras todo lo necesario para poder reparar el coche. </div><br><br>
+    <article class="texto"> La cochera está llena de chismes y suciedad <div *ngIf="DatosService.coche == false">, por
+            suerte,
+            entre los trastos encuentras todo lo necesario para poder reparar el coche. </div><br><br>
         <div *ngIf="DatosService.conocimiento == false">Aunque tengas mucho miedo tras el ataque de dos insectos
             gigantes,
             sería interesante ver la habitación que falta antes de marcharse</div><br>

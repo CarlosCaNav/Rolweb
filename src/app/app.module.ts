@@ -6,6 +6,7 @@ import { IntroComponent } from './intro/intro.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { PanelComponent } from './panel/panel.component';
 import { DadosComponent } from './dados/dados.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +14,11 @@ import { DadosComponent } from './dados/dados.component';
     IntroComponent,
     HistoriaComponent,
     PanelComponent,
-    DadosComponent
+    DadosComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

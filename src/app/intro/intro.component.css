@@ -1,18 +1,69 @@
-.texto{
+.texto {
     margin: 40px;
     font-size: 30px;
     text-align: justify;
     color: white
 }
 
-.atributos{
+.atributos {
     display: flex;
     flex-direction: row;
     width: max-content;
 }
 
-.cajaA{
+.cajaA {
     width: 160px;
     text-align: center;
+}
 
+.botonflex {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin: 0px 40px 0px 40px;
+
+}
+
+.circulito {
+    background-color: rgb(0, 26, 16);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 2px white;
+    transition: 500ms;
+    font-size: 15px;
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
+}
+
+.button {
+    background-color: rgb(0, 26, 16);
+    color: white;
+    border: 5px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px white;
+    height: 40px;
+    transition: 500ms;
+    font-size: 25px;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 12px 8px white;
+}
+
+.button:active {
+    box-shadow: 0px 0px 60px 40px red;
+    transition: 1ms;
+}
+
+.sexo {
+    background-color: rgb(0, 26, 16);
+    color: white;
+    border: 5px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px white;
+    height: 40px;
+    transition: 500ms;
+    font-size: 24px;
+    margin-left: 20px;
 }

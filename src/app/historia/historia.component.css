@@ -1,21 +1,47 @@
-.texto{
-    margin: 40px;
-    font-size: 30px;
-    text-align: justify;
-    color: white;
-    animation-name: delayP;
-    animation-duration: 3000ms;
-  }
-  
-  @keyframes delayP {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+.texto {
+  margin: 40px;
+  font-size: 30px;
+  text-align: justify;
+  color: white;
+  animation-name: delayP;
+  animation-duration: 3000ms;
 }
 
-.centrada{    
-    margin-left: calc(50% - 150px);
+@keyframes delayP {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.centrada {
+  margin-left: calc(50% - 150px);
+  background-color: rgb(0, 26, 16);
+  border: 3px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px white;
+}
+
+
+.button {
+  background-color: rgb(0, 26, 16);
+  color: white;
+  border: 5px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 5px white;
+  height: 40px;
+  transition: 500ms;
+  font-size: 25px;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 12px 8px white;
+}
+
+.button:active {
+  box-shadow: 0px 0px 60px 40px red;
+  transition: 1ms;
 }

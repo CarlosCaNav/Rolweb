@@ -8,6 +8,6 @@ import { DatosService } from '../datos.service'; /* esto escrito a mano */
 })
 export class IntroComponent {
 
-  constructor(public DatosService: DatosService) {} /* esto escrito a mano */
 
+  constructor(public DatosService: DatosService) {} /* esto escrito a mano */
 }
