@@ -273,5 +273,14 @@ export class DatosService {
     this.percepcion = this.percepcion + Per;
     this.puntos = 10 - this.fuerza - this.velocidad - this.punteria - this.percepcion;
   }
-
+ 
+  alternarSonido(){
+    if (this.sonidos == true){
+      this.ambiente.pause(); /* Cómo paro esto!!!! */
+      this.sonidos = false;
+    }
+    else {this.sonidos = true
+    this.ambiente.play();
+  }
+}
 }

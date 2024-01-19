@@ -25,6 +25,16 @@
   box-shadow: 0px 0px 10px 0px white;
 }
 
+.botonflex {
+  display: flex;
+  justify-content: space-between;
+
+  /* margin-left: auto; */
+  
+  margin: 0px 40px 0px 40px;
+
+  flex-direction: row-reverse;
+}
 
 .button {
   background-color: rgb(0, 26, 16);
@@ -35,6 +45,8 @@
   height: 40px;
   transition: 500ms;
   font-size: 25px;
+  animation-name: delayP;
+  animation-duration: 5000ms;
 }
 
 .button:hover {

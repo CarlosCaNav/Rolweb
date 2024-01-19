@@ -12,18 +12,25 @@
         Abandonas la carretera secundaria, y te metes por un camino en el que cuanto más avanzas, en peor estado está.
         <br><br>Poco a poco va anocheciendo.
 
-        <br><br>
-
-        <button (click)="DatosService.tirada('percepcion')"> realizar tirada de percepcion</button>
-
     </article>
+    <br><br>
+    <div class="botonflex">
+        <div class="botonflex">
+            <button class=" button" (click)="DatosService.tirada('percepcion')"> realizar tirada de percepcion </button>
+        </div>
+    </div>
 
 </div>
 
 <div *ngIf="DatosService.lugar == 'roca'">
     <article class="texto">ves entre la maleza del sendero una roca e inmediatamente intentas esquivarla y parar
     </article>
-    <button (click)="DatosService.tirada('velocidad')"> intentas esquivar la roca (tirada de velocidad)</button>
+    <div class="botonflex">
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.tirada('velocidad')"> intentas esquivar la roca (tirada de
+                velocidad)</button>
+        </div>
+    </div>
 </div>
 
 <div *ngIf="DatosService.lugar == 'rocaGolpe1'">
@@ -34,14 +41,18 @@
         "Mal sitio para quedarse atrapado" piensas, ya que no hay cobertura y estás lejos de la carretera.
         Esperas poder encontrar en la casa gasolina y las herramientas necesarias para poder arreglar la fisura.
     </article>
-    <button (click)="DatosService.siguiente('bosqueIda')"> siguiente</button>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.siguiente('bosqueIda')"> siguiente</button>
+    </div>
 </div>
 
 <div *ngIf="DatosService.lugar == 'rocaSalvas'">
     <article class="texto">Por los pelos logras esquivar la roca. Detienes el coche completamente y compruebas que está
         en buen estado.
         Decides que es mejor continuar a pie, la casa no debe estar lejos</article>
-    <button (click)="DatosService.siguiente('bosqueIda')"> siguiente</button>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.siguiente('bosqueIda')"> siguiente</button>
+    </div>
 </div>
 
 <div *ngIf="DatosService.lugar == 'rocaGolpe2'"> <!-- 13 -->
@@ -53,7 +64,9 @@
         "Mal sitio para quedarse atrapado" piensas, ya que no hay cobertura y estás lejos de la carretera.
         Esperas poder encontrar en la casa gasolina y las herramientas necesarias para poder arreglar la fisura.
     </article>
-    <button (click)="DatosService.siguiente('bosqueIda')"> siguiente</button>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.siguiente('bosqueIda')"> siguiente</button>
+    </div>
 </div>
 
 <div *ngIf="DatosService.lugar == 'bosqueIda'"> <!-- 20 -->
@@ -63,20 +76,28 @@
         así que agarras un palo del suelo, siempre transmite seguridad...<br><br>
         Avanzas unos metros y ves que en mitad del sendero hay el tronco de un arbol caido.
     </article>
-    <button (click)="DatosService.tirada('fuerza')"> tratar de apartarlo del camino (fuerza)</button>
-    <button (click)="DatosService.siguiente('claroMosquito')"> pasar por encima</button>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.tirada('fuerza')"> tratar de apartarlo del camino (fuerza)</button>
+    </div>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.siguiente('claroMosquito')"> pasar por encima</button>
+    </div>
 </div>
 
 <div *ngIf="DatosService.lugar == 'troncoFuera'">
     <article class="texto">Consigues echar a un lado el tronco. "Así no tendré que bajarme del coche para quitarlo la
         próxima vez"
     </article>
-    <button (click)="DatosService.siguiente('claroMosquito')"> siguiente</button>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.siguiente('claroMosquito')"> siguiente</button>
+    </div>
 </div>
 <div *ngIf="DatosService.lugar == 'troncoCamino'">
     <article class="texto">El tronco es demasiado pesado, decides dejarlo donde está y continúas
     </article>
-    <button (click)="DatosService.siguiente('claroMosquito')"> siguiente</button>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.siguiente('claroMosquito')"> siguiente</button>
+    </div>
 </div>
 
 
@@ -90,21 +111,46 @@
         más grande que tu mano. <br> <br>
         Empuñas con fuerza el palo y te acercas a la casa. Al llegar a la puerta oyes ruido en su interior... <br>
     </article>
-    <button (click)="DatosService.siguiente('salon')"> entrar</button>
-    <button (click)="DatosService.lugar = 'escucha'"> escuchar </button>
-    <button (click)="DatosService.tirada('fuerza')"> abrir la puerta de una patada (lugar bugueado, no pulsar)</button>
-    <!-- aquí te lanzará al 46 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
-    <button (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa para ver qué encuentras</button>
+    <div class="botonflex">
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('salon')"> entrar</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.lugar = 'escucha'"> escuchar </button>
+        </div>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.tirada('fuerza')"> abrir la puerta de una patada (lugar
+                bugueado,
+                no pulsar)</button>
+        </div>
+        <!-- aquí te lanzará al 46 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa para ver qué
+                encuentras</button>
+        </div>
+    </div>
 </div>
 
 <div *ngIf="DatosService.lugar == 'escucha'">
     <article class="texto">Pegas el oido a la puerta y no logras descifrar qué estás escuchando.
         Lo que está claro es que hay un animal tras la puerta.<br>
     </article>
-    <button (click)="DatosService.siguiente('salon')"> entrar</button>
-    <button (click)="DatosService.tirada('fuerza')"> abrir la puerta de una patada (lugar bugueado, no pulsar)</button>
-    <!-- aquí te lanzará al 46 -->
-    <button (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa para ver qué encuentras</button>
+
+    <div class="botonflex">
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('salon')"> entrar</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.tirada('fuerza')"> abrir la puerta de una patada (lugar
+                bugueado,
+                no pulsar)</button>
+        </div>
+        <!-- aquí te lanzará al 46 -->
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa para ver qué
+                encuentras</button>
+        </div>
+    </div>
 </div>
 
 
@@ -113,7 +159,9 @@
         a lo que parece una Mantis de más de medio metro de altura que estaba comiendose una presa.
         Sin pensártelo dos veces empuñas tu palo y tratas de golpearla con todas tus fuerzas<br>
     </article>
-    <button (click)="DatosService.tirada('fuerza')"> Golpear la Mantis (fuerza) </button>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.tirada('fuerza')"> Golpear la Mantis (fuerza) </button>
+    </div>
 </div>
 
 
@@ -121,44 +169,67 @@
     <article class="texto">Pintas involuntariamente un cuadro abstracto en la pared con las tripas de la mantis del palo
         que le das<br>
     </article>
-    <button (click)="DatosService.lugar = 'salon'"> Mirar a tu alrededor</button>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.lugar = 'salon'"> Mirar a tu alrededor</button>
+    </div>
 </div>
 
 <div *ngIf="DatosService.lugar == 'puertaRuido'">
     <article class="texto"> Al llegar a la puerta oyes ruido en su interior... <br>
     </article>
-    <button (click)="DatosService.siguiente('salon')"> entrar</button>
-    <button (click)="DatosService.lugar = 'escucha'"> escuchar </button>
-    <button (click)="DatosService.tirada('fuerza')"> abrir la puerta de una patada (lugar bugueado, no pulsar) </button>
-    <button (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa</button>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.siguiente('salon')"> entrar</button>
+    </div>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.lugar = 'escucha'"> escuchar </button>
+    </div>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.tirada('fuerza')"> abrir la puerta de una patada (lugar bugueado,
+            no
+            pulsar) </button>
+    </div>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa</button>
+    </div>
 </div>
 
 <div *ngIf="DatosService.lugar == 'puertaSilencio'">
     <article class="texto"> Vuelves a la puerta de entrada, esta vez sin ningún peligro en el interior <br>
     </article>
-    <button (click)="DatosService.siguiente('salon')"> entrar</button>
-    <button (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa</button>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.siguiente('salon')"> entrar</button>
+    </div>
+    <div class="botonflex">
+        <button class="button" (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa</button>
+    </div>
 </div>
 
 
 <div *ngIf="DatosService.lugar == 'salon' && DatosService.salon == true">
     <article class="texto"> Al entrar en el salón una mantis de medio metro que estaba devorando a una presa, se
         avalanza sobre ti <br>
-        <button (click)="DatosService.tirada('velocidad')"> Intentar esquivarla (velocidad)</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.tirada('velocidad')"> Intentar esquivarla (velocidad)</button>
+        </div>
         <!-- exito 41 fallo 42  -->
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'mantisEsquiva'">
     <article class="texto"> Esquivas a la mantis gigante, y con todas tus fuerzas le golpeas con el palo partiéndola en
         dos <br>
-        <button (click)="DatosService.siguiente('salon')">mirar alrededor</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('salon')">mirar alrededor</button>
+        </div>
     </article>
 </div>
 
 <div *ngIf="DatosService.lugar == 'mantisAtaca'">
     <article class="texto"> La mantis salta sobre ti, te ataca y tratas de quitártela de encima antes de que pueda
         hacerte daño <br>
-        <button (click)="DatosService.tirada('fuerza')"> agarrar la mantis con tus manos (fuerza)</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.tirada('fuerza')"> agarrar la mantis con tus manos
+                (fuerza)</button>
+        </div>
         <!-- exito 43 fallo 44  -->
     </article>
 </div>
@@ -173,7 +244,9 @@
         <div *ngIf="DatosService.conocimiento == false">
             ¿Cómo es posible que existan estos insectos gigantes? ¿Y si hubiera otros animales más peligrosos? </div>
         <br>
-        <button (click)="DatosService.siguiente('salon')">mirar alrededor</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('salon')">mirar alrededor</button>
+        </div>
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'mantisAplastada'">
@@ -187,7 +260,9 @@
         <div *ngIf="DatosService.conocimiento == false">
             ¿Cómo es posible que existan estos insectos gigantes? ¿Y si hubiera otros animales más peligrosos? </div>
         <br>
-        <button (click)="DatosService.siguiente('salon')">mirar alrededor</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('salon')">mirar alrededor</button>
+        </div>
     </article>
 </div>
 
@@ -195,18 +270,28 @@
     <article class="texto"> El salón no tiene demasiados adornos, un sofá viejo, una TV vieja, y algún cuadro feo.
         El salón comunica con la cocina, la cual no ves que tenga nada particular, también comunica con
         un dormitorio con material de laboratorio y una cochera llena de trastos <br>
-        <button (click)="DatosService.siguiente('cochera')">entrar a la
-            cochera</button>
-        <button (click)="DatosService.siguiente('puertaSilencio')">salir al exterior</button>
-        <button (click)="DatosService.siguiente('dormitorio')">entrar al dormitorio</button>
-        <button *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
-            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente <br> ya he visto lo
-            suficiente. <br> este lugar no es seguro
-        </button>
-        <button
-            *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
-            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
-        </button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('cochera')">entrar a la
+                cochera</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('puertaSilencio')">salir al exterior</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('dormitorio')">entrar al dormitorio</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente <br> ya he visto lo
+                suficiente. <br> este lugar no es seguro
+            </button>
+        </div>
+        <div class="botonflex">
+            <button
+                *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+            </button>
+        </div>
 
     </article>
 </div>
@@ -214,18 +299,31 @@
 <div *ngIf="DatosService.lugar == 'exteriorVentana'">
     <article class="texto"> Rodeando la casa llegas a una ventana rota.
         En el interior puedes observar un dormitorio y lo que parece un escritorio con objetos de laboratorio <br>
-        <button (click)="DatosService.siguiente('dormitorio')"> entrar por la ventana</button>
-        <button *ngIf="DatosService.salon == true" (click)="DatosService.siguiente('puertaRuido')"> volver a la
-            puerta</button>
-        <button *ngIf="DatosService.salon == false" (click)="DatosService.siguiente('puertaSilencio')"> volver a la
-            puerta</button> <!-- 32 -->
-        <button *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
-            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
-        </button>
-        <button
-            *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
-            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
-        </button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('dormitorio')"> entrar por la ventana</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" *ngIf="DatosService.salon == true" (click)="DatosService.siguiente('puertaRuido')">
+                volver a la
+                puerta</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" *ngIf="DatosService.salon == false"
+                (click)="DatosService.siguiente('puertaSilencio')">
+                volver a la
+                puerta</button>
+        </div> <!-- 32 -->
+        <div class="botonflex">
+            <button class="button" *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+            </button>
+        </div>
+        <div class="botonflex">
+            <button
+                *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+            </button>
+        </div>
     </article>
 </div>
 
@@ -239,21 +337,40 @@
         Sientes como el miedo recorre tu cuerpo al tener la certeza de que este lugar no es nada seguro
         <div *ngIf="DatosService.coche == true"> "¡Debería volver cuanto antes al coche!" </div> <br>
         <div *ngIf="DatosService.coche == true"> "¡Tengo que encontrar cómo reparar el coche!" </div>
-        <button *ngIf="DatosService.salon == true" (click)="DatosService.siguiente('salon')">entrar al salón</button>
-        <button *ngIf="DatosService.salon == false" (click)="DatosService.siguiente('salon')">entrar al salón</button>
-        <button *ngIf="DatosService.salon == true" (click)="DatosService.siguiente('puertaRuido')">salir y volver a la
-            puerta
-            principal</button>
-        <button *ngIf="DatosService.salon == false" (click)="DatosService.siguiente('puertaSilencio')">salir y volver a
-            la puerta
-            principal</button>
-        <button *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
-            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
-        </button>
-        <button
-            *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
-            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
-        </button>
+        <div class="botonflex">
+            <button class="button" *ngIf="DatosService.salon == true" (click)="DatosService.siguiente('salon')">entrar
+                al
+                salón</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" *ngIf="DatosService.salon == false" (click)="DatosService.siguiente('salon')">entrar
+                al
+                salón</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" *ngIf="DatosService.salon == true"
+                (click)="DatosService.siguiente('puertaRuido')">salir
+                y volver a la
+                puerta
+                principal</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" *ngIf="DatosService.salon == false"
+                (click)="DatosService.siguiente('puertaSilencio')">salir y volver a
+                la puerta
+                principal</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+            </button>
+        </div>
+        <div class="botonflex">
+            <button
+                *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+            </button>
+        </div>
     </article>
 </div>
 
@@ -266,11 +383,16 @@
             gigantes,
             sería interesante ver la habitación que falta antes de marcharse</div><br>
 
-        <button (click)="DatosService.siguiente('salon')">volver al salón</button>
-        <button *ngIf="DatosService.conocimiento == true" (click)="DatosService.siguiente('volverCoche')"> volver al
-            coche
-            inmediatamente
-        </button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('salon')">volver al salón</button>
+        </div>
+        <div class="botonflex">
+            <button class="button" *ngIf="DatosService.conocimiento == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al
+                coche
+                inmediatamente
+            </button>
+        </div>
     </article>
 </div>
 
@@ -283,7 +405,9 @@
         <br><br><br>
         ¡Enhorabuena! Has completado la aventura! Y perdóname si te pusiste puntos en "puntería" ya que no han servido
         para nada.<br>
-        <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        </div>
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'volverCoche' && DatosService.tronco == true">
@@ -291,14 +415,18 @@
         como si de un oso se tratase, pero aquí no hay osos... pero sí zorros o perros salvajes.
         Corres hacia el coche con todas tus fuerzas intentando no tropezar con nada en la oscuridad.<br>
 
-        <button (click)="DatosService.tirada('percepcion')"> Percepción</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.tirada('percepcion')"> Percepción</button>
+        </div>
     </article>
 </div>
 
 <div *ngIf="DatosService.lugar == 'obstaculoTronco'">
     <article class="texto"> Ves el tronco que no retiraste del camino, ahora tienes que saltarlo.<br>
 
-        <button (click)="DatosService.tirada('velocidad')"> Saltar el tronco (velocidad) </button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.tirada('velocidad')"> Saltar el tronco (velocidad) </button>
+        </div>
     </article>
 </div>
 
@@ -310,7 +438,9 @@
         y como si de una pesadilla se tratase, unos colmillos a tu lado de un animal inmenso brillan en la oscuridad.
         Apenas puedes reaccionar cuando se avalanzan sobre ti... Fin de la partida... <br><br>
         Primero pierdes la partida y luego descubres que repartiste puntos a la habilidad "puntería" para nada...<br>
-        <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        </div>
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'muerte2'">
@@ -319,7 +449,9 @@
         y como si de una pesadilla se tratase, unos colmillos a tu lado de un animal inmenso brillan en la oscuridad.
         Apenas puedes reaccionar cuando se avalanzan sobre ti... Fin de la partida... <br><br>
         Primero pierdes la partida y luego descubres que repartiste puntos a la habilidad "puntería" para nada...<br>
-        <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        </div>
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'victoria'">
@@ -328,7 +460,9 @@
         <br><br><br>
         ¡Enhorabuena! Has completado la aventura! Y perdóname si te pusiste puntos en "puntería" ya que no han servido
         para nada.<br>
-        <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        </div>
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'victoria'">
@@ -337,7 +471,9 @@
         <br><br><br>
         ¡Enhorabuena! Has completado la aventura! Y perdóname si te pusiste puntos en "puntería" ya que no han servido
         para nada.<br>
-        <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        <div class="botonflex">
+            <button class="button" (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
+        </div>
     </article>
 </div>
 <div *ngIf="DatosService.lugar == 'estadisticas'">
