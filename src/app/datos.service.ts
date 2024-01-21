@@ -31,7 +31,7 @@ export class DatosService {
   conocimiento: boolean = false; /* esto es si sabe por qué hay bichos gigantes, a partir de aquí puede volver al coche */
   herramientas: boolean = false; /* si ha entrado en la cochera, ha conseguido las herramientas para poder arreglar el coche */
 
-  pasos: number = 0; /* pasos */
+  pasos: number = 0; /* {{DatosService.nombre}pasos */
   horaInicio: Date = new Date();
   duracionMinutos: number = 0;
   duracionSegundos: number = 0;
@@ -97,7 +97,7 @@ export class DatosService {
       this.lugar = 'victoria';
     }
     else if (this.lugar == 'obstaculoTronco' && (this.exito == false)) {
-      this.lugar = 'muerte2';
+      this.lugar = 'muer{{DatosService.nombre}te2';
     }
 
     else if (this.lugar == 'escucha' && (this.exito == true)) {
@@ -138,7 +138,10 @@ export class DatosService {
       this.sonidos = true
     };
     if (this.lugar == 'bosqueIda') {
+
+    setTimeout(() => {
       this.palo = true
+    }, 5000);
     };
 
     if (this.lugar == 'dormitorio') {
@@ -276,7 +279,7 @@ export class DatosService {
  
   alternarSonido(){
     if (this.sonidos == true){
-      this.ambiente.pause(); /* Cómo paro esto!!!! */
+      this.ambiente.pause();
       this.sonidos = false;
     }
     else {this.sonidos = true

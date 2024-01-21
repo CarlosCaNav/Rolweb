@@ -36,25 +36,35 @@
     margin-left: 10px;
 }
 
-.button {
+.botonflex {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 40px 0px 40px;
+  
+    flex-direction: row;
+  }
+  
+  .button {
     background-color: rgb(0, 26, 16);
     color: white;
     border: 5px solid black;
     border-radius: 10px;
+    margin: 10px;
     box-shadow: 0px 0px 5px 5px white;
-    height: 40px;
     transition: 500ms;
     font-size: 25px;
-}
-
-.button:hover {
+    animation-name: delayP;
+    animation-duration: 5000ms;
+  }
+  
+  .button:hover {
     box-shadow: 0px 0px 12px 8px white;
-}
-
-.button:active {
+  }
+  
+  .button:active {
     box-shadow: 0px 0px 60px 40px red;
     transition: 1ms;
-}
+  }
 
 .sexo {
     background-color: rgb(0, 26, 16);

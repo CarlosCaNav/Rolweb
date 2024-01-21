@@ -74,11 +74,11 @@
                     <img *ngIf="DatosService.percepcion == 4" width="130px" src="assets/4.png">
                 </div>
             </div>
-<br>
-            <button class="button" (click)="DatosService.siguiente('presentacion')">anterior</button>
-            <div *ngIf="DatosService.sexo !='j' && DatosService.puntos == 0" style='text-align:left'>
-                <div style='text-align:right'><button class="button"
-                        (click)="DatosService.siguiente('historia')">siguiente</button>&emsp;&nbsp;&emsp;</div>
+            <br>
+            <div class="botonflex">
+                <button class="button" (click)="DatosService.siguiente('presentacion')">anterior</button>
+                <button class="button" *ngIf="DatosService.sexo !='j' && DatosService.puntos == 0"
+                    (click)="DatosService.siguiente('historia')">siguiente</button>
             </div>
         </div>
     </article>

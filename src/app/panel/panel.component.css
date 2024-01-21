@@ -1,22 +1,80 @@
-.panel{
+.panel {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-.uno{
+.uno {
     height: 200px;
     width: 200px;
-   /*  border: 1px solid red; */
-}.dos{
+    /*  border: 1px solid red; */
+}
+
+.dos {
     height: 200px;
     width: 200px;
-/*     border: 1px solid green; */
-}.tres{
+    /*     border: 1px solid green; */
+}
+
+.tres {
     height: 200px;
     width: 200px;
 }
-.atributos{
+
+.atributos {
     margin: 15px;
     text-align: center;
+}
+
+.objetos {
+    animation-name: armas;
+    animation-duration: 4000ms;
+}
+
+@keyframes armas {
+    0% {
+        opacity: 0;
+        font-size: 0px;
+    }
+
+    25% {
+        font-size: 20px;
+        opacity: 1;
+    }
+
+    30% {
+        color: red
+    }
+
+    35% {
+        color: white
+    }
+
+    40% {
+        color: red
+    }
+
+    45% {
+        color: white
+    }
+
+    50% {
+        color: red
+    }
+
+    55% {
+        color: white;
+        font-size: 20px;
+        opacity: 1;
+    }
+
+    75% {
+        font-size: 10px;
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+        font-size: 16px;
+    }
 }
