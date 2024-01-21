@@ -72,8 +72,15 @@
     border: 5px solid black;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 5px white;
-    height: 40px;
+    width: 150px;
     transition: 500ms;
     font-size: 24px;
     margin-left: 20px;
+}
+
+.nombre{
+  width: 150px;
+  height: 25px;
+  border-radius: 7px;
+  
 }

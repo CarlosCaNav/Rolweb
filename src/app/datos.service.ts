@@ -141,14 +141,14 @@ export class DatosService {
 
     setTimeout(() => {
       this.palo = true
-    }, 5000);
+    }, 8000);
     };
 
     if (this.lugar == 'dormitorio') {
       this.conocimiento = true
     };
 
-    if (this.lugar == 'cochera') {
+    if (this.lugar == 'cochera' && this.coche == false) {
       this.herramientas = true
     }
 
