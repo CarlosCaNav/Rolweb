@@ -26,7 +26,7 @@ export class DatosService {
   coche: boolean = true; /* Si el coche está roto o no */
   tronco: boolean = true; /* El tronco está en medio del camino */
   palo: boolean = false; /* si ha cogido un palo del suelo */
-  puerta: boolean = false; /* fracaso al tirar la puerta */
+  puerta: boolean = false; /* se ha intentado o se ha tirado la puerta */
   salon: boolean = true; /* si hay bichos en el salón */
   conocimiento: boolean = false; /* esto es si sabe por qué hay bichos gigantes, a partir de aquí puede volver al coche */
   herramientas: boolean = false; /* si ha entrado en la cochera, ha conseguido las herramientas para poder arreglar el coche */
@@ -100,26 +100,34 @@ export class DatosService {
       this.lugar = 'muer{{DatosService.nombre}te2';
     }
 
-    else if (this.lugar == 'escucha' && (this.exito == true)) {
+    else if (this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido'  && this.exito == true && this.habilidad == 'fuerza') {
       this.lugar = 'mantisSorprendida';
+      this.puerta = true;
     }
-    else if (this.lugar == 'escucha' && (this.exito == false)) {
+    else if (this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido'  && this.exito == false && this.habilidad == 'fuerza') {
       this.lugar = 'puertaRuido';
+
+      this.puerta = true;
+      console.log ("es mal")
     }
 
-    else if (this.lugar == 'puertaRuido' || 'escucha' || 'MantisSorprendida' && this.habilidad == 'fuerza' && (this.exito == true)) { /* Arreglar */
+    else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == true) { /* testear */
       this.lugar = 'mantisSorprendida';
+      this.puerta = true;
     }
-    else if (this.lugar == 'puertaRuido' || 'escucha' || 'MantisSorprendida' && this.habilidad == 'fuerza' && (this.exito == false)) {/* Arreglar */
+    else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == false) {/* testear */
       this.lugar = 'puertaRuido';
+      this.puerta = true;
     }
 
-    else if (this.lugar == 'mantisSorprendida' && (this.exito == true)) { /* Arreglar */
-      this.lugar = 'mantisSorprendida';
+    else if (this.lugar == 'mantisSorprendida' && this.exito == true) { /* testear */
+      this.lugar = 'cuadro';
+      this.salon = false;
     }
-    else if (this.lugar == 'escucha' && (this.exito == false)) { /* Arreglar */
+    else if (this.lugar == 'mantisSorprendida' && this.exito == false) { /* testear */
       this.lugar = 'mantisAtaca';
     }
+
     this.tiradas.push(this.resultado);
 
     this.pasos = this.pasos + 1;
@@ -141,7 +149,7 @@ export class DatosService {
 
     setTimeout(() => {
       this.palo = true
-    }, 8000);
+    }, 9000);
     };
 
     if (this.lugar == 'dormitorio') {
