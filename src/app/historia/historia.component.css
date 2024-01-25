@@ -25,6 +25,10 @@
   box-shadow: 0px 0px 10px 0px white;
 }
 
+.cuatrocientos {
+  margin-left: calc(50% - 200px);
+}
+
 .botonflex {
   display: flex;
   justify-content: space-between;

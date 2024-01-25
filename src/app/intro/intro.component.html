@@ -32,50 +32,50 @@
         <br />A continuación, crea tu personaje. <br><br> Nombre:
         <input class="nombre" type="text" [(ngModel)]="DatosService.nombre">
         <br><br>
-        Sexo: <Button class="sexo" (click)="DatosService.cambioSexo('o')"> Hombre</Button> <Button class="sexo"
+        Sexo: <Button class="sexo" (click)="DatosService.cambioSexo('o')"> Hombre</Button><Button class="sexo"
             (click)="DatosService.cambioSexo('a')" width="500px"> Mujer</Button><br><br>
         <div *ngIf="DatosService.sexo != 'j' ">¡Bienvenid{{DatosService.sexo}} {{DatosService.nombre}} a la aventura!
             <br> A continuación, asigna las habilidades de tu personaje:
             <br><br>
             Puntos restantes a repartir : {{DatosService.puntos}} <br>
-            <div class=atributos> 
-                    <div class=cajaA>Fuerza <br> <button class="circulito"
-                            (click)="DatosService.atributoF(1)"><b>+</b></button>
-                        <button class="circulito" (click)="DatosService.atributoF(-1)"><b>-</b></button><br>
-                        <img *ngIf="DatosService.fuerza == 0" width="130px" src="assets/0.png">
-                        <img *ngIf="DatosService.fuerza == 1" width="130px" src="assets/1.png">
-                        <img *ngIf="DatosService.fuerza == 2" width="130px" src="assets/2.png">
-                        <img *ngIf="DatosService.fuerza == 3" width="130px" src="assets/3.png">
-                        <img *ngIf="DatosService.fuerza == 4" width="130px" src="assets/4.png">
-                    </div>
-                    <div class=cajaA>Velocidad <br> <button class="circulito"
-                            (click)="DatosService.atributoV(1)"><b>+</b></button>
-                        <button class="circulito" (click)="DatosService.atributoV(-1)"><b>-</b></button><br>
-                        <img *ngIf="DatosService.velocidad == 0" width="130px" src="assets/0.png">
-                        <img *ngIf="DatosService.velocidad == 1" width="130px" src="assets/1.png">
-                        <img *ngIf="DatosService.velocidad == 2" width="130px" src="assets/2.png">
-                        <img *ngIf="DatosService.velocidad == 3" width="130px" src="assets/3.png">
-                        <img *ngIf="DatosService.velocidad == 4" width="130px" src="assets/4.png">
-                    </div>
-                    <div class=cajaA>Puntería <br> <button class="circulito"
-                            (click)="DatosService.atributoPun(1)"><b>+</b></button>
-                        <button class="circulito" (click)="DatosService.atributoPun(-1)"><b>-</b></button><br>
-                        <img *ngIf="DatosService.punteria == 0" width="130px" src="assets/0.png">
-                        <img *ngIf="DatosService.punteria == 1" width="130px" src="assets/1.png">
-                        <img *ngIf="DatosService.punteria == 2" width="130px" src="assets/2.png">
-                        <img *ngIf="DatosService.punteria == 3" width="130px" src="assets/3.png">
-                        <img *ngIf="DatosService.punteria == 4" width="130px" src="assets/4.png">
-                    </div>
-                    <div class=cajaA>Percepción <br> <button class="circulito"
-                            (click)="DatosService.atributoPer(1)"><b>+</b></button>
-                        <button class="circulito" (click)="DatosService.atributoPer(-1)"><b>-</b></button><br>
-                        <img *ngIf="DatosService.percepcion == 0" width="130px" src="assets/0.png">
-                        <img *ngIf="DatosService.percepcion == 1" width="130px" src="assets/1.png">
-                        <img *ngIf="DatosService.percepcion == 2" width="130px" src="assets/2.png">
-                        <img *ngIf="DatosService.percepcion == 3" width="130px" src="assets/3.png">
-                        <img *ngIf="DatosService.percepcion == 4" width="130px" src="assets/4.png">
-                    </div>
-                
+            <div class=atributos>
+                <div class=cajaA>Fuerza <br> <button class="circulito"
+                        (click)="DatosService.atributoF(1)"><b>+</b></button>
+                    <button class="circulito" (click)="DatosService.atributoF(-1)"><b>-</b></button><br>
+                    <img *ngIf="DatosService.fuerza == 0" width="130px" src="assets/0.png">
+                    <img *ngIf="DatosService.fuerza == 1" width="130px" src="assets/1.png">
+                    <img *ngIf="DatosService.fuerza == 2" width="130px" src="assets/2.png">
+                    <img *ngIf="DatosService.fuerza == 3" width="130px" src="assets/3.png">
+                    <img *ngIf="DatosService.fuerza == 4" width="130px" src="assets/4.png">
+                </div>
+                <div class=cajaA>Velocidad <br> <button class="circulito"
+                        (click)="DatosService.atributoV(1)"><b>+</b></button>
+                    <button class="circulito" (click)="DatosService.atributoV(-1)"><b>-</b></button><br>
+                    <img *ngIf="DatosService.velocidad == 0" width="130px" src="assets/0.png">
+                    <img *ngIf="DatosService.velocidad == 1" width="130px" src="assets/1.png">
+                    <img *ngIf="DatosService.velocidad == 2" width="130px" src="assets/2.png">
+                    <img *ngIf="DatosService.velocidad == 3" width="130px" src="assets/3.png">
+                    <img *ngIf="DatosService.velocidad == 4" width="130px" src="assets/4.png">
+                </div>
+                <div class=cajaA>Puntería <br> <button class="circulito"
+                        (click)="DatosService.atributoPun(1)"><b>+</b></button>
+                    <button class="circulito" (click)="DatosService.atributoPun(-1)"><b>-</b></button><br>
+                    <img *ngIf="DatosService.punteria == 0" width="130px" src="assets/0.png">
+                    <img *ngIf="DatosService.punteria == 1" width="130px" src="assets/1.png">
+                    <img *ngIf="DatosService.punteria == 2" width="130px" src="assets/2.png">
+                    <img *ngIf="DatosService.punteria == 3" width="130px" src="assets/3.png">
+                    <img *ngIf="DatosService.punteria == 4" width="130px" src="assets/4.png">
+                </div>
+                <div class=cajaA>Percepción <br> <button class="circulito"
+                        (click)="DatosService.atributoPer(1)"><b>+</b></button>
+                    <button class="circulito" (click)="DatosService.atributoPer(-1)"><b>-</b></button><br>
+                    <img *ngIf="DatosService.percepcion == 0" width="130px" src="assets/0.png">
+                    <img *ngIf="DatosService.percepcion == 1" width="130px" src="assets/1.png">
+                    <img *ngIf="DatosService.percepcion == 2" width="130px" src="assets/2.png">
+                    <img *ngIf="DatosService.percepcion == 3" width="130px" src="assets/3.png">
+                    <img *ngIf="DatosService.percepcion == 4" width="130px" src="assets/4.png">
+                </div>
+
             </div>
             <br>
             <div class="botonflex">

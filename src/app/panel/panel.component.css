@@ -1,54 +1,67 @@
 .panel {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .panel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+}
+
+.caja {
+    display: flex;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
+    height: 200px;
+    width: 200px;
+    justify-content: center;
 }
 
 .uno {
-    height: 200px;
-    width: 200px;
-    /*  border: 1px solid red; */
+    /* border: 1px solid red; */
 }
 
 .dos {
-    height: 200px;
-    width: 200px;
-    /*     border: 1px solid green; */
+    /* border: 1px solid green; */
 }
 
 .tres {
-    height: 200px;
-    width: 200px;
+    /* border: 1px solid blue; */
 }
 
 .atributos {
     margin: 15px;
     text-align: center;
 }
+
 .button {
-  background-color: rgb(0, 26, 16);
-  color: white;
-  border: 5px solid black;
-  border-radius: 10px;
-  margin: 10px;
-  box-shadow: 0px 0px 5px 5px white;
-  transition: 500ms;
-  font-size: 16px;
-  animation-name: delayP;
-  animation-duration: 5000ms;
+    background-color: rgb(0, 26, 16);
+    color: white;
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 0px 5px 5px white;
+    transition: 500ms;
+    font-size: 16px;
+    animation-name: delayP;
+    animation-duration: 5000ms;
 }
 
 .button:hover {
-  box-shadow: 0px 0px 12px 8px white;
+    box-shadow: 0px 0px 12px 8px white;
 }
 
 .button:active {
-  box-shadow: 0px 0px 60px 40px red;
-  transition: 1ms;
+    box-shadow: 0px 0px 60px 40px red;
+    transition: 1ms;
 }
 
-.animacion
- {
+.animacion {
     animation-name: atributos;
     animation-duration: 500ms;
 }
@@ -58,11 +71,13 @@
         opacity: 0;
         width: 150px;
     }
+
     100% {
         opacity: 1;
         width: 130px;
     }
 }
+
 .objetos {
     animation-name: armas;
     animation-duration: 4000ms;

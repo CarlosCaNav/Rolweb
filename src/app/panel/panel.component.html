@@ -1,5 +1,5 @@
 <div class="panel">
-  <div class="uno">
+  <div class="caja uno">
     <p class="atributos">panel works! <br> {{DatosService.nombre}}<br>
       <button class="button" (click)="DatosService.alternarSonido()">
         <div *ngIf="DatosService.sonidos == false">activar sonidos</div>
@@ -8,21 +8,21 @@
     </p>
 
   </div>
-  <div class="dos">
+  <div class="caja dos">
     <div class="atributos">
       <br> Objetos: <br><br>
       <div class="objetos" *ngIf="DatosService.palo == true">Palo de madera</div>
       <div class="objetos" *ngIf="DatosService.herramientas == true">herramientas</div>
     </div>
   </div>
-  <div class="tres">
+  <div class="caja tres">
     <div class="atributos">
       <div class=cajaA> <b>Fuerza</b> <br>
-            <img class="animacion" *ngIf="DatosService.fuerza == 0" width="130px" src="assets/0.png">
-            <img class="animacion"*ngIf="DatosService.fuerza == 1" width="130px" src="assets/1.png">
-            <img class="animacion"*ngIf="DatosService.fuerza == 2" width="130px" src="assets/2.png">
-            <img class="animacion"*ngIf="DatosService.fuerza == 3" width="130px" src="assets/3.png">
-            <img class="animacion"*ngIf="DatosService.fuerza == 4" width="130px" src="assets/4.png">
+        <img class="animacion" *ngIf="DatosService.fuerza == 0" width="130px" src="assets/0.png">
+        <img class="animacion" *ngIf="DatosService.fuerza == 1" width="130px" src="assets/1.png">
+        <img class="animacion" *ngIf="DatosService.fuerza == 2" width="130px" src="assets/2.png">
+        <img class="animacion" *ngIf="DatosService.fuerza == 3" width="130px" src="assets/3.png">
+        <img class="animacion" *ngIf="DatosService.fuerza == 4" width="130px" src="assets/4.png">
       </div>
       <div class=cajaA><b>Velocidad </b><br>
         <img class="animacion" *ngIf="DatosService.velocidad == 0" width="130px" src="assets/0.png">

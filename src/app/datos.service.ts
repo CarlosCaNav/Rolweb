@@ -97,7 +97,7 @@ export class DatosService {
       this.lugar = 'victoria';
     }
     else if (this.lugar == 'obstaculoTronco' && (this.exito == false)) {
-      this.lugar = 'muer{{DatosService.nombre}te2';
+      this.lugar = 'muerte2';
     }
 
     else if (this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido'  && this.exito == true && this.habilidad == 'fuerza') {

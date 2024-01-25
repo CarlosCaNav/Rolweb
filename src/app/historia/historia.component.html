@@ -71,10 +71,11 @@
 
 <div *ngIf="DatosService.lugar == 'bosqueIda'"> <!-- 20 -->
     <article class="texto"> El miedo te acompaña en tu caminata nocturna.
-        Aunque sabes que no hay animales ni personas que te amenacen, 
+        Aunque sabes que no hay animales ni personas que te amenacen,
         no puedes evitar sentir una irracional inquietud.
-         Por eso, coges un palo que encuentras en el suelo, buscando algo de seguridad…<br><br>
-        Avanzas unos metros y ves que en mitad del sendero hay el tronco de un arbol caído.
+        Por eso, coges un palo que encuentras en el suelo, buscando algo de seguridad…<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/tronco.jpeg" height="400"><br><br>
+        Avanzas unos metros y ves que en mitad del sendero hay el tronco de un arbol caído.<br>
     </article>
     <div class="botonflex">
         <button class="button" (click)="DatosService.tirada('fuerza')"> tratar de apartarlo del camino (fuerza)</button>
@@ -84,7 +85,8 @@
 
 <div *ngIf="DatosService.lugar == 'troncoFuera'">
     <article class="texto">Consigues echar a un lado el tronco. "Así no tendré que bajarme del coche para quitarlo la
-        próxima vez"
+        próxima vez"<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/camino.jpeg" height="400"><br><br>
     </article>
     <div class="botonflex">
         <button class="button" (click)="DatosService.siguiente('claroMosquito')"> siguiente</button>
@@ -92,7 +94,8 @@
 
 </div>
 <div *ngIf="DatosService.lugar == 'troncoCamino'">
-    <article class="texto">El tronco es demasiado pesado, decides dejarlo donde está y continúas
+    <article class="texto">El tronco es demasiado pesado, decides dejarlo donde está y continúas<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/tronco.jpeg" height="400"><br><br>
     </article>
     <div class="botonflex">
         <button class="button" (click)="DatosService.siguiente('claroMosquito')"> siguiente</button>
@@ -105,12 +108,14 @@
         Es de noche y el cielo está lleno de estrellas.
         El silencio solo se rompe por el crujir de tus pasos y el canto de algún grillo.<br><br>
         De repente, un zumbido te sobresalta y sientes algo en el cuello.
-        Instintivamente, le pegas un golpe y lo tiras al suelo.
-        Te horrorizas al ver que es un mosquito gigante, más grande que tu mano. "Aquí algo raro está sucediendo"<br><br>
+        Instintivamente, le pegas un golpe y lo tiras al suelo.<br>
+        <img class="centrada" src="../../assets/imagenes/mosquito.jpeg" height="300"><br>
+        Te horrorizas al ver que es un mosquito gigante, más grande que tu mano. "Aquí algo raro está
+        sucediendo"<br><br>
 
         Con el palo en la mano te diriges hacia la casa. Pero al llegar a la puerta escuchas un ruido dentro…
-        
-        
+
+
         <!-- 
         
         Llegas a un claro, y ya por fin ves la casa.
@@ -126,7 +131,8 @@
         <div class="botonflex">
             <button class="button" (click)="DatosService.siguiente('salon')"> entrar</button>
             <button class="button" (click)="DatosService.lugar = 'escucha'"> escuchar </button>
-            <button *ngIf="DatosService.puerta == false" class="button" (click)="DatosService.tirada('fuerza')"> abrir la puerta de una patada </button>
+            <button *ngIf="DatosService.puerta == false" class="button" (click)="DatosService.tirada('fuerza')"> abrir
+                la puerta de una patada </button>
             <button class="button" (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa para ver qué
                 encuentras</button>
         </div>
@@ -141,7 +147,8 @@
     <div class="botonflex">
         <div class="botonflex">
             <button class="button" (click)="DatosService.siguiente('salon')"> entrar</button>
-            <button *ngIf="DatosService.puerta == false" class="button" (click)="DatosService.tirada('fuerza')"> abrir la puerta de una patada</button>
+            <button *ngIf="DatosService.puerta == false" class="button" (click)="DatosService.tirada('fuerza')"> abrir
+                la puerta de una patada</button>
             <button class="button" (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa para ver qué
                 encuentras</button>
         </div>
@@ -175,7 +182,8 @@
     <div class="botonflex">
         <button class="button" (click)="DatosService.siguiente('salon')"> entrar</button>
         <button class="button" (click)="DatosService.lugar = 'escucha'"> escuchar </button>
-        <button class="button" *ngIf="DatosService.puerta == false" (click)="DatosService.tirada('fuerza')"> abrir la puerta de una patada</button>
+        <button class="button" *ngIf="DatosService.puerta == false" (click)="DatosService.tirada('fuerza')"> abrir la
+            puerta de una patada</button>
         <button class="button" (click)="DatosService.siguiente('exteriorVentana')"> rodear la casa</button>
     </div>
 </div>
