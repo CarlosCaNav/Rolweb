@@ -108,8 +108,8 @@
         Es de noche y el cielo está lleno de estrellas.
         El silencio solo se rompe por el crujir de tus pasos y el canto de algún grillo.<br><br>
         De repente, un zumbido te sobresalta y sientes algo en el cuello.
-        Instintivamente, le pegas un golpe y lo tiras al suelo.<br>
-        <img class="centrada" src="../../assets/imagenes/mosquito.jpeg" height="300"><br>
+        Instintivamente, le pegas un golpe y lo tiras al suelo.<br><br>
+        <img class="centrada" src="../../assets/imagenes/mosquito.jpeg" height="300"><br><br>
         Te horrorizas al ver que es un mosquito gigante, más grande que tu mano. "Aquí algo raro está
         sucediendo"<br><br>
 
@@ -157,9 +157,12 @@
 
 
 <div *ngIf="DatosService.lugar == 'mantisSorprendida'">
-    <article class="texto">Pegas una patada a la puerta con todas tus fuerzas dejando en Shock
+    <article class="texto"> Pegas una patada a la puerta con todas tus fuerzas dejando en Shock
         a lo que parece una mantis de más de medio metro de altura que estaba comiendose una presa.
-        Sin pensártelo dos veces empuñas tu palo y tratas de golpearla con todas tus fuerzas<br>
+        Sin pensártelo dos veces empuñas tu palo y tratas de golpearla con todas tus fuerzas.
+        <!-- Con un fuerte golpe de pie, abres la puerta y sorprendes a una enorme mantis que devoraba a su víctima.
+         Sin dudar, coges tu palo y le asestas un golpe con toda tu fuerza. -->
+        <br>
     </article>
     <div class="botonflex">
         <button class="button" (click)="DatosService.tirada('fuerza')"> Golpear la mantis (fuerza) </button>
@@ -173,6 +176,8 @@
     </article>
     <div class="botonflex">
         <button class="button" (click)="DatosService.lugar = 'salon'"> Mirar a tu alrededor</button>
+        <button class="button" *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
+            (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente </button>
     </div>
 </div>
 
@@ -266,14 +271,10 @@
             <button class="button" (click)="DatosService.siguiente('puertaSilencio')">salir al exterior</button>
             <button class="button" (click)="DatosService.siguiente('dormitorio')">entrar al dormitorio</button>
             <button class="button" *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
-                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente <br> ya he visto lo
-                suficiente. <br> este lugar no es seguro
-            </button>
-        </div>
-        <div class="botonflex">
-            <button
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente, ya he visto lo suficiente </button>
+            <button class="button"
                 *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
-                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente, ya he visto lo suficiente
             </button>
         </div>
 
@@ -341,10 +342,11 @@
 
         <div class="botonflex">
             <button class="button" (click)="DatosService.siguiente('salon')">volver al salón</button>
-            <button class="button" *ngIf="DatosService.conocimiento == true"
-                (click)="DatosService.siguiente('volverCoche')"> volver al
-                coche
-                inmediatamente
+            <button class="button" *ngIf="DatosService.coche == true && DatosService.conocimiento == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente </button>
+            <button class="button"
+                *ngIf="DatosService.coche == false && DatosService.conocimiento == true && DatosService.herramientas == true"
+                (click)="DatosService.siguiente('volverCoche')"> volver al coche inmediatamente
             </button>
         </div>
     </article>
@@ -354,7 +356,8 @@
     <article class="texto"> Cuando sales al exterior ves pisadas en el suelo enormes,
         como si de un oso se tratase, pero aquí no hay osos... pero sí zorros o perros salvajes.
         Corres hacia el coche con todas tus fuerzas sin mirar atrás.
-        Sientes un alivio inmenso al pasar por donde retiraste el tronco y ver que tienes el camino despejado.
+        Sientes un alivio inmenso al pasar por donde retiraste el tronco y ver que tienes el camino despejado.<br><br>
+        <img class="centrada" src="../../assets/imagenes/cocheCamino.jpeg" height="300"><br><br>
         Entras al coche, recuperas el aliento, y tras asegurarte que no hay peligro, sales reparas el coche y te vas...
         <br><br><br>
         ¡Enhorabuena! Has completado la aventura! Y perdóname si te pusiste puntos en "puntería" ya que no han servido
