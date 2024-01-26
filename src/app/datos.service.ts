@@ -109,6 +109,7 @@ export class DatosService {
 
       this.puerta = true;
       console.log ("es mal")
+      console.log (this.habilidad)
     }
 
     else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == true) { /* testear */

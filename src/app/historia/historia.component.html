@@ -23,7 +23,8 @@
 </div>
 
 <div *ngIf="DatosService.lugar == 'roca'">
-    <article class="texto">Ves entre la maleza del sendero una roca e inmediatamente intentas esquivarla y parar.
+    <article class="texto">Ves entre la maleza del sendero una roca e inmediatamente intentas esquivarla y parar.<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/caminoRoca.jpeg" height="400"><br><br>
     </article>
     <div class="botonflex">
         <div class="botonflex">
@@ -49,7 +50,9 @@
 <div *ngIf="DatosService.lugar == 'rocaSalvas'">
     <article class="texto">Por los pelos logras esquivar la roca. Detienes el coche completamente y compruebas que está
         en buen estado.
-        Decides que es mejor continuar a pie, la casa no debe estar lejos.</article>
+        Decides que es mejor continuar a pie, la casa no debe estar lejos.<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/camino.jpeg" height="400"><br><br>
+    </article>
     <div class="botonflex">
         <button class="button" (click)="DatosService.siguiente('bosqueIda')"> siguiente</button>
     </div>
@@ -205,7 +208,7 @@
 
 <div *ngIf="DatosService.lugar == 'salon' && DatosService.salon == true">
     <article class="texto"> Al entrar en el salón una mantis de medio metro que estaba devorando a una presa, se
-        avalanza sobre ti <br>
+        avalanza sobre ti. <br><br>
         <div class="botonflex">
             <button class="button" (click)="DatosService.tirada('velocidad')"> Intentar esquivarla (velocidad)</button>
         </div>
@@ -223,7 +226,7 @@
 
 <div *ngIf="DatosService.lugar == 'mantisAtaca'">
     <article class="texto"> La mantis salta sobre ti, te ataca y tratas de quitártela de encima antes de que pueda
-        hacerte daño. <br>
+        hacerte daño. <br><br>
         <div class="botonflex">
             <button class="button" (click)="DatosService.tirada('fuerza')"> agarrar la mantis con tus manos.
                 (fuerza)</button>
@@ -283,7 +286,8 @@
 
 <div *ngIf="DatosService.lugar == 'exteriorVentana'">
     <article class="texto"> Rodeando la casa llegas a una ventana rota.
-        En el interior puedes observar un dormitorio y lo que parece un escritorio con objetos de laboratorio <br>
+        En el interior puedes observar un dormitorio y lo que parece un escritorio con objetos de laboratorio <br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/ventanaQuimica.jpeg" height="400"><br><br>
         <div class="botonflex">
             <button class="button" (click)="DatosService.siguiente('dormitorio')"> entrar por la ventana</button>
             <button class="button" *ngIf="DatosService.salon == true" (click)="DatosService.siguiente('puertaRuido')">
@@ -302,15 +306,26 @@
 </div>
 
 <div *ngIf="DatosService.lugar == 'dormitorio'">
-    <article class="texto"> Al entrar en la habitación ves cristales y un líquido violeta vertido por la el suelo.
+    <article class="texto">
+        <!-- medio IA medio yo --> La habitación está llena de cristales rotos y un líquido violeta que se ha derramado por el suelo.
+        Hay una puerta que conduce al salón.
+        Entre las probetas, encuentras unas notas que revelan que tu tío estaba trabajando en un elixir para curar ciertas enfermedades.
+         Pero el experimento salió mal y lo único que consiguió es que los animales que
+         entraban en contacto con dicha sustancia crecieran desproporcionadamente.
+
+         <!-- Texto original Al entrar en la habitación ves cristales y un líquido violeta vertido por la el suelo.
         Hay una puerta que da a lo que parece el salón.
         Husmeas las notas que te encuentras entre las probetas y descubres que tu tío ha estado desarrollando un
         "elixir" con el que pretendía curar ciertas enfermedades, y lo único que consiguió es que los animales que
         entraban en contacto
-        con dicha sustancia crecieran desproporcionadamente.<br><br>
-        Sientes como el miedo recorre tu cuerpo al tener la certeza de que este lugar no es nada seguro
-        <div *ngIf="DatosService.coche == true"> "¡Debería volver cuanto antes al coche!" </div> <br>
-        <div *ngIf="DatosService.coche == true"> "¡Tengo que encontrar cómo reparar el coche!" </div>
+        con dicha sustancia crecieran desproporcionadamente -->.<br><br>
+        <img class="centrada" src="../../assets/imagenes/dormitorioQuimica.jpeg" height="300"><br><br>
+        Sientes como el miedo recorre tu cuerpo al tener la certeza de que este lugar no es nada seguro.<br><br>
+
+        <div *ngIf="DatosService.coche == true"> "¡Debería volver cuanto antes al coche!" </div>
+        <div *ngIf="DatosService.coche == false && DatosService.herramientas == true"> "¡Debería volver cuanto antes al coche!" </div>
+        <div *ngIf="DatosService.coche == false  && DatosService.herramientas == false"> "¡Tengo que encontrar cómo reparar el coche!" </div>
+        <br> 
         <div class="botonflex">
             <button class="button" *ngIf="DatosService.salon == true" (click)="DatosService.siguiente('salon')">entrar
                 al
@@ -338,7 +353,8 @@
             entre los trastos encuentras todo lo necesario para poder reparar el coche. </div><br><br>
         <div *ngIf="DatosService.conocimiento == false">Aunque tengas mucho miedo tras el ataque de dos insectos
             gigantes,
-            sería interesante ver la habitación que falta antes de marcharse</div><br>
+            sería interesante ver la habitación que falta antes de marcharse.</div><br><br>
+            <img class="centrada cuatrocientos" src="../../assets/imagenes/cochera.jpeg" height="400"><br><br>
 
         <div class="botonflex">
             <button class="button" (click)="DatosService.siguiente('salon')">volver al salón</button>
@@ -369,8 +385,9 @@
 </div>
 <div *ngIf="DatosService.lugar == 'volverCoche' && DatosService.tronco == true">
     <article class="texto"> Cuando sales al exterior ves pisadas en el suelo enormes,
-        como si de un oso se tratase, pero aquí no hay osos... pero sí zorros o perros salvajes.
-        Corres hacia el coche con todas tus fuerzas intentando no tropezar con nada en la oscuridad.<br>
+        como si de un oso se tratase, pero aquí no hay osos... pero sí zorros o perros salvajes.<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/pisadas.jpeg" height="400"><br><br>
+        Corres hacia el coche con todas tus fuerzas intentando no tropezar con nada en la oscuridad.<br><br>
 
         <div class="botonflex">
             <button class="button" (click)="DatosService.tirada('percepcion')"> Percepción</button>
@@ -379,7 +396,8 @@
 </div>
 
 <div *ngIf="DatosService.lugar == 'obstaculoTronco'">
-    <article class="texto"> Ves el tronco que no retiraste del camino, ahora tienes que saltarlo.<br>
+    <article class="texto"> Ves el tronco que no retiraste del camino, ahora tienes que saltarlo.<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/tronco.jpeg" height="400"><br><br>
 
         <div class="botonflex">
             <button class="button" (click)="DatosService.tirada('velocidad')"> Saltar el tronco (velocidad) </button>
@@ -390,11 +408,13 @@
 <div *ngIf="DatosService.lugar == 'muerte1'">
     <article class="texto"> Abre los ojos lentamente... "¿qué ha pasado?" te preguntas. Estás en el suelo sangrando por
         una brecha de la frente.
-        Miras a tu alrededor y ves lo que ha ocurrido, te has tropezado mientras corrías a con el tronco del camino.
+        Miras a tu alrededor y ves lo que ha ocurrido, te has tropezado mientras corrías a con el tronco del camino.<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/dientes.jpeg" height="400"><br><br>
         Miras al otro lanzando
         y como si de una pesadilla se tratase, unos colmillos a tu lado de un animal inmenso brillan en la oscuridad.
         Apenas puedes reaccionar cuando se avalanzan sobre ti... Fin de la partida... <br><br>
-        Primero pierdes la partida y luego descubres que repartiste puntos a la habilidad "puntería" para nada...<br>
+        Primero pierdes la partida y luego descubres que repartiste puntos a la habilidad "puntería" para nada...
+        Entendería si no te ha gustado  &#128148; <br><br>
         <div class="botonflex">
             <button class="button" (click)="DatosService.siguiente('estadisticas')">estadisticas</button>
         </div>
