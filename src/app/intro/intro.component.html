@@ -28,16 +28,16 @@
 
 <div *ngIf="DatosService.lugar == 'personaje'">
     <article class="texto">
-        <div style='text-align:center'><b>¿Quién eres?</b></div>
-        <br />A continuación, crea tu personaje. <br><br> Nombre:
+        <div style='text-align:center'><b>¿Quién eres?</b><br></div>
+        <br />A continuación, crea tu personaje. <br><br><br> Nombre:
         <input class="nombre" type="text" [(ngModel)]="DatosService.nombre">
         <br><br>
         Sexo: <Button class="sexo" (click)="DatosService.cambioSexo('o')"> Hombre</Button><Button class="sexo"
-            (click)="DatosService.cambioSexo('a')" width="500px"> Mujer</Button><br><br>
+            (click)="DatosService.cambioSexo('a')" width="500px"> Mujer</Button><br><br><br>
         <div *ngIf="DatosService.sexo != 'j' ">¡Bienvenid{{DatosService.sexo}} {{DatosService.nombre}} a la aventura!
-            <br> A continuación, asigna las habilidades de tu personaje:
+            <br><br><br> A continuación, asigna las habilidades de tu personaje:
             <br><br>
-            Puntos restantes a repartir : {{DatosService.puntos}} <br>
+            Puntos restantes a repartir : {{DatosService.puntos}} <br><br>
             <div class=atributos>
                 <div class=cajaA>Fuerza <br> <button class="circulito"
                         (click)="DatosService.atributoF(1)"><b>+</b></button>
@@ -77,7 +77,7 @@
                 </div>
 
             </div>
-            <br>
+            <br><br><br>
             <div class="botonflex">
                 <button class="button" (click)="DatosService.siguiente('presentacion')">anterior</button>
                 <button class="button" *ngIf="DatosService.sexo !='j' && DatosService.puntos == 0"
@@ -97,12 +97,17 @@
                 (click)="DatosService.fuerza = 2 && DatosService.velocidad = 2 && DatosService.punteria = 2 && DatosService.percepcion = 2"
                 (click)="DatosService.lugar = 'historia'">
                 ir</button>
-            <br>
+            <br><br>
             Empezar en la puerta
             <button
                 (click)="DatosService.fuerza = 2 && DatosService.velocidad = 2 && DatosService.punteria = 2 && DatosService.percepcion = 2"
                 (click)="DatosService.lugar = 'puertaRuido'">
-                ir</button>
+                ir</button><br><br>
+                Empezar en la puerta y fallar todo
+                <button
+                    (click)="DatosService.fuerza = 0 && DatosService.velocidad = 0 && DatosService.punteria = 0 && DatosService.percepcion = 0"
+                    (click)="DatosService.lugar = 'puertaRuido'">
+                    ir</button>
             <br><br><br>
             <button (click)="DatosService.siguiente('presentacion')">anterior</button>
             <br><br><br>

@@ -37,7 +37,8 @@
 <div *ngIf="DatosService.lugar == 'rocaGolpe1'">
     <article class="texto">Notas un golpazo en la parte inferior del coche, paras el coche, y bajas a ver lo que ha
         sucedido
-        y descubres que el golpe ha perforado el depósito de gasolina y se está derramando en la tierra.
+        y descubres que el golpe ha perforado el depósito de gasolina y se está derramando en la tierra.<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/cocheRoto.jpeg" height="400"><br><br>
         En el coche no tienes nada que te sirva para taponar la fuga ni para almacenar la gasolina que cae.
         "Mal sitio para quedarse atrapado" piensas, ya que no hay cobertura y estás lejos de la carretera.
         Esperas poder encontrar en la casa gasolina y las herramientas necesarias para poder arreglar la fisura.
@@ -63,6 +64,7 @@
         golpe en la parte inferior del coche. <br><br>
         Bajas con la esperanza de que no haya sido nada pero descubres que el golpe ha perforado el depósito de gasolina
         y se está derramando en la tierra.<br><br>
+        <img class="centrada" src="../../assets/imagenes/cocheRoto.jpeg" height="300"><br><br>
         En el coche no tienes nada que te sirva para taponar la fuga ni para almacenar la gasolina que cae.
         "Mal sitio para quedarse atrapado" piensas, ya que no hay cobertura y estás lejos de la carretera.
         Esperas poder encontrar en la casa gasolina y las herramientas necesarias para poder arreglar la fisura.
@@ -144,7 +146,8 @@
 
 <div *ngIf="DatosService.lugar == 'escucha'">
     <article class="texto">Pegas el oido a la puerta y no logras descifrar qué estás escuchando.
-        Lo que está claro es que hay un animal tras la puerta.<br>
+        Lo que está claro es que hay un animal tras la puerta.<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/puerta.jpeg" height="400"><br><br>
     </article>
 
     <div class="botonflex">
@@ -161,7 +164,8 @@
 
 <div *ngIf="DatosService.lugar == 'mantisSorprendida'">
     <article class="texto"> Pegas una patada a la puerta con todas tus fuerzas dejando en Shock
-        a lo que parece una mantis de más de medio metro de altura que estaba comiendose una presa.
+        a lo que parece una mantis de más de medio metro de altura que estaba comiendose una presa.<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/mantis.jpeg" height="400"><br><br>
         Sin pensártelo dos veces empuñas tu palo y tratas de golpearla con todas tus fuerzas.
         <!-- Con un fuerte golpe de pie, abres la puerta y sorprendes a una enorme mantis que devoraba a su víctima.
          Sin dudar, coges tu palo y le asestas un golpe con toda tu fuerza. -->
@@ -185,7 +189,9 @@
 </div>
 
 <div *ngIf="DatosService.lugar == 'puertaRuido'">
-    <article class="texto"> Al llegar a la puerta oyes ruido en su interior... <br>
+    <article class="texto"> Al llegar a la puerta oyes ruido en su interior... 
+        <div *ngIf="DatosService.puerta == true"> No pude tirar la puerta abajo y ahora sabe de mi presencia.</div><br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/puerta.jpeg" height="400"><br><br>
     </article>
     <div class="botonflex">
         <button class="button" (click)="DatosService.siguiente('salon')"> entrar</button>
@@ -226,7 +232,8 @@
 
 <div *ngIf="DatosService.lugar == 'mantisAtaca'">
     <article class="texto"> La mantis salta sobre ti, te ataca y tratas de quitártela de encima antes de que pueda
-        hacerte daño. <br><br>
+        hacerte daño.<br><br>
+        <img class="centrada cuatrocientos" src="../../assets/imagenes/mantisAtaca.jpeg" height="400"><br><br>
         <div class="botonflex">
             <button class="button" (click)="DatosService.tirada('fuerza')"> agarrar la mantis con tus manos.
                 (fuerza)</button>

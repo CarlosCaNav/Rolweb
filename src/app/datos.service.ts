@@ -111,16 +111,16 @@ export class DatosService {
       console.log ("es mal")
       console.log (this.habilidad)
     }
-
-    else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == true) { /* testear */
+/* 
+    else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == true) {
       this.lugar = 'mantisSorprendida';
       this.puerta = true;
     }
-    else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == false) {/* testear */
+    else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == false) {
       this.lugar = 'puertaRuido';
       this.puerta = true;
     }
-
+ */
     else if (this.lugar == 'mantisSorprendida' && this.exito == true) { /* testear */
       this.lugar = 'cuadro';
       this.salon = false;
@@ -150,7 +150,7 @@ export class DatosService {
 
     setTimeout(() => {
       this.palo = true
-    }, 9000);
+    }, 5000);
     };
 
     if (this.lugar == 'dormitorio') {
@@ -222,6 +222,7 @@ export class DatosService {
             this.resultado = this.resultado; */
 
       console.log(this.resultado);
+      console.log(this.lugar)
       console.log(this.exito);
       /* console.log(this.lugar) */
     }, 2000);
