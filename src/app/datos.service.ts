@@ -66,7 +66,7 @@ export class DatosService {
     }
     else if (this.lugar == 'bosqueIda' && (this.exito == false)) {
       this.lugar = 'troncoCamino';
-      this.coche = true;
+      this.tronco = true;
     }
 
     else if (this.lugar == 'salon' && (this.exito == true)) {

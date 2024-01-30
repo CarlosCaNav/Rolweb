@@ -1,6 +1,6 @@
 <div class="panel">
   <div class="caja uno">
-    <p class="atributos">panel works! <br> {{DatosService.nombre}}<br>
+    <p class="atributos">Opciones <br> {{DatosService.nombre}}<br>
       <button class="button" (click)="DatosService.alternarSonido()">
         <div *ngIf="DatosService.sonidos == false">activar sonidos</div>
         <div *ngIf="DatosService.sonidos == true">desactivar sonidos</div>
@@ -11,6 +11,7 @@
   <div class="caja dos">
     <div class="atributos">
       <br> Objetos: <br><br>
+      <div class="objetos" *ngIf="DatosService.coche == false">Coche averiado</div>
       <div class="objetos" *ngIf="DatosService.palo == true">Palo de madera</div>
       <div class="objetos" *ngIf="DatosService.herramientas == true">herramientas</div>
     </div>

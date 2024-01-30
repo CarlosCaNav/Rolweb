@@ -27,7 +27,7 @@
       }
     
 }
-
+/* 
 .botones{
     position: absolute;
     z-index: 3;
@@ -39,4 +39,32 @@
     color: white;
     background-color: black;
     box-shadow: 20px 20px 20px black;
+} */
+
+.botones {
+  position: absolute;
+  z-index: 3;
+  height: 50px;
+  width: 150px;
+  margin-top: 430px;
+  margin-left: 300px;
+
+  background-color: rgb(0, 26, 16);
+  color: white;
+  border: 5px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 5px white;
+  transition: 500ms;
+  font-size: 25px;
+  animation-name: delayP;
+  animation-duration: 5000ms;
+}
+
+.botones:hover {
+  box-shadow: 0px 0px 12px 8px white;
+}
+
+.botones:active {
+  box-shadow: 0px 0px 60px 40px red;
+  transition: 1ms;
 }
