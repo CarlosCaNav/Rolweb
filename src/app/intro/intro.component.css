@@ -1,6 +1,6 @@
 .texto {
   margin: 40px;
-  font-size: 30px;
+  font-size: 27px;
   text-align: justify;
   color: white
 }
@@ -52,7 +52,7 @@
   margin: 10px;
   box-shadow: 0px 0px 5px 5px white;
   transition: 500ms;
-  font-size: 25px;
+  font-size: 23px;
   animation-name: delayP;
   animation-duration: 5000ms;
 }
@@ -80,7 +80,29 @@
 
 .nombre {
   width: 150px;
-  height: 25px;
+  height: 30px;
   border-radius: 7px;
+  font-size: 25px;
+}
 
+@media screen and (max-width: 1200px) {
+  .circulito {
+    height: 70px;
+    width: 60px;
+    font-size: 30px;
+    border-radius: 30px;
+  }
+
+  .sexo {
+    width: 250px;
+    font-size: 54px;
+  }
+
+  .nombre {
+    width: 250px;
+    height: 50px;
+    border-radius: 7px;
+    font-size: 40px;
+
+  }
 }

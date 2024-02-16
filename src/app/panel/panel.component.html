@@ -2,9 +2,13 @@
   <div class="caja uno">
     <p class="atributos">Opciones <br> {{DatosService.nombre}}<br>
       <button class="button" (click)="DatosService.alternarSonido()">
-        <div *ngIf="DatosService.sonidos == false">activar sonidos</div>
-        <div *ngIf="DatosService.sonidos == true">desactivar sonidos</div>
-      </button>
+        <div *ngIf="DatosService.sonidos == false">Activar sonidos</div>
+        <div *ngIf="DatosService.sonidos == true">Desactivar sonidos</div>
+      </button> <br>
+      <a href="https://carloscanav.github.io">
+        <button class="button">Página personal
+        </button>
+      </a>
     </p>
 
   </div>

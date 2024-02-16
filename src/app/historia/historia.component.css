@@ -1,6 +1,6 @@
 .texto {
   margin: 40px;
-  font-size: 30px;
+  font-size: 27px;
   text-align: justify;
   color: white;
   animation-name: delayP;
@@ -45,7 +45,7 @@
   margin: 10px;
   box-shadow: 0px 0px 5px 5px white;
   transition: 500ms;
-  font-size: 25px;
+  font-size: 23px;
   animation-name: delayP;
   animation-duration: 5000ms;
 }

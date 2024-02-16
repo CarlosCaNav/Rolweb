@@ -100,11 +100,11 @@ export class DatosService {
       this.lugar = 'muerte2';
     }
 
-    else if (this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido'  && this.exito == true && this.habilidad == 'fuerza') {
+    else if ((this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido')  && this.exito == true && this.habilidad == 'fuerza') {
       this.lugar = 'mantisSorprendida';
       this.puerta = true;
     }
-    else if (this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido'  && this.exito == false && this.habilidad == 'fuerza') {
+    else if ((this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido')  && this.exito == false && this.habilidad == 'fuerza') {
       this.lugar = 'puertaRuido';
 
       this.puerta = true;
