@@ -6,7 +6,7 @@
         en la que tendrás que tomar decisiones y las consecuencias dependerán de ellas,
         pero también en gran medida del azar. <br><br>
         En cada acción es probable que tengas que lanzar un dado virtual,
-        el cual tendrá que tener un resultado igual o superior al número de la habilidad requerida de tu personaje
+        el cual tendrá que tener un resultado, igual o superior, al número de la habilidad requerida de tu personaje
         para que tu elección sea exitosa.
         <br><br>
         Si por ejemplo decides realizar una acción usando la fuerza, es probable que tengas que realizar una tirada de
@@ -121,9 +121,16 @@
 <div *ngIf="DatosService.lugar == 'estadisticas'">
     <article class="texto">
         <div style='text-align:center'><b>Estadísticas</b><br><br>
-            Duración: {{DatosService.duracionMinutos}} minutos y {{DatosService.duracionSegundos}} segundos<br><br><br>
-            media de las tiradas {{DatosService.mediaTiradas}}
-            <br><br><br><!-- 
+            Duración: {{DatosService.duracionMinutos}} minutos y {{DatosService.duracionSegundos}} segundos.<br><br><br>
+            Resultado medio de las tiradas: {{DatosService.mediaTiradas }}
+            <br><br><br>
+            ¡Gracias!
+            <br><br>
+            <a href="https://carloscanav.github.io">
+                <button class="button">Página personal
+                </button> </a>
+            
+            <!-- 
             <button (click)="DatosService.siguiente('presentacion')">anterior</button>
             <br><br><br>
             <button (click)="DatosService.siguiente('estadisticas')">estadisticas</button> -->

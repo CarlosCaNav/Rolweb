@@ -100,27 +100,27 @@ export class DatosService {
       this.lugar = 'muerte2';
     }
 
-    else if ((this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido')  && this.exito == true && this.habilidad == 'fuerza') {
+    else if ((this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido') && this.exito == true && this.habilidad == 'fuerza') {
       this.lugar = 'mantisSorprendida';
       this.puerta = true;
     }
-    else if ((this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido')  && this.exito == false && this.habilidad == 'fuerza') {
+    else if ((this.lugar == 'escucha' || this.lugar == 'claroMosquito' || this.lugar == 'puertaRuido') && this.exito == false && this.habilidad == 'fuerza') {
       this.lugar = 'puertaRuido';
 
       this.puerta = true;
-      console.log ("es mal")
-      console.log (this.habilidad)
+      console.log("es mal")
+      console.log(this.habilidad)
     }
-/* 
-    else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == true) {
-      this.lugar = 'mantisSorprendida';
-      this.puerta = true;
-    }
-    else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == false) {
-      this.lugar = 'puertaRuido';
-      this.puerta = true;
-    }
- */
+    /* 
+        else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == true) {
+          this.lugar = 'mantisSorprendida';
+          this.puerta = true;
+        }
+        else if (this.lugar == 'puertaRuido' || this.lugar == 'escucha'  && this.habilidad == 'fuerza' && this.exito == false) {
+          this.lugar = 'puertaRuido';
+          this.puerta = true;
+        }
+     */
     else if (this.lugar == 'mantisSorprendida' && this.exito == true) { /* testear */
       this.lugar = 'cuadro';
       this.salon = false;
@@ -148,9 +148,9 @@ export class DatosService {
     };
     if (this.lugar == 'bosqueIda') {
 
-    setTimeout(() => {
-      this.palo = true
-    }, 5000);
+      setTimeout(() => {
+        this.palo = true
+      }, 5000);
     };
 
     if (this.lugar == 'dormitorio') {
@@ -183,7 +183,7 @@ export class DatosService {
         suma = suma + this.tiradas[i];
       }
 
-      this.mediaTiradas = suma / this.tiradas.length;
+      this.mediaTiradas =  suma / this.tiradas.length;
     }
 
 
@@ -286,14 +286,15 @@ export class DatosService {
     this.percepcion = this.percepcion + Per;
     this.puntos = 10 - this.fuerza - this.velocidad - this.punteria - this.percepcion;
   }
- 
-  alternarSonido(){
-    if (this.sonidos == true){
+
+  alternarSonido() {
+    if (this.sonidos == true) {
       this.ambiente.pause();
       this.sonidos = false;
     }
-    else {this.sonidos = true
-    this.ambiente.play();
+    else {
+      this.sonidos = true
+      this.ambiente.play();
+    }
   }
-}
 }

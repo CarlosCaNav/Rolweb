@@ -6,7 +6,7 @@ import { IntroComponent } from './intro/intro.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { PanelComponent } from './panel/panel.component';
 import { DadosComponent } from './dados/dados.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; /* esto es para poder escribir */
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule, /* esto es para poder escribir */
   ],
   providers: [],
   bootstrap: [AppComponent]
